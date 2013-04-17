@@ -26,12 +26,12 @@
                     <sf:input path="userId" /><font color='red' ><b><i> *</i></b></font></td> </tr> 
             <tr><td> Password:
                     <sf:password path="desiredPassWord" /><font color='red' ><b><i> *</i></b></font></td> </tr>
-            <tr><td>  Type : <sf:select path="adminUser">
+            <%--tr><td>  Type : <sf:select path="adminUser">
                         <sf:option value = "0" label = "User"/>
                         <sf:option value = "1" label = "Programmer"/>
                         <sf:option value = "2" label = "Admin"/>
                         <sf:errors path="userId">Invalid UserId / Password</sf:errors>
-                    </sf:select><font color='red' ><b><i> *</i></b></font></td> </tr>
+                    </sf:select><font color='red' ><b><i> *</i></b></font></td> </tr--%>
             <font color='red' ><b><i>   ${error}</i></b></font>
             <td bgcolor="#FF9E0E" colspan="40" height="20">
                 <input type="submit" value="Log in" />  

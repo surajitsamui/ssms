@@ -45,9 +45,9 @@
 <font color="grey"><u><h2>PENDING COMPLAINTS :</h2></u></font>
 <table  align="center">
 
-    <tr> <td>  <font color="grey"><u><b>Complaint No</b></u></font> </td>
-<td>  <font color="grey"><u><b>Complaint Description</b></u></font> </td>
-<td>  <font color="grey"><u><b>Complaint type</b></u></font> </td></tr>
+    <tr> <td>  <font color="grey"><u><b> No</b></u></font> </td>
+<td>  <font color="grey"><u><b> Description</b></u></font> </td>
+<td>  <font color="grey"><u><b>Type</b></u></font> </td></tr>
 
 
 <c:forEach items="${statusPendingUnsolved}" var="ss">
@@ -73,9 +73,9 @@
 
 <table  align="center">
 
-    <tr> <td>  <font color="grey"><u><b>Complaint No</b></u></font> </td>
-<td>  <font color="grey"><u><b>Complaint Description</b></u></font> </td>
-<td>  <font color="grey"><u><b>Complaint type</b></u></font> </td>
+    <tr> <td>  <font color="grey"><u><b>No</b></u></font> </td>
+<td>  <font color="grey"><u><b>Description</b></u></font> </td>
+<td>  <font color="grey"><u><b> Type</b></u></font> </td>
 
 <td>  <font color="grey"><u><b>Feedback</b></u></font> </td></tr>
 

@@ -9,6 +9,7 @@ package com.mycompany.complaintregistration.complaintReg;
  * @author mmc-pc1
  */
 public class ProgrammerAnalystDetail {
+
     private String ProgrammerName;
     private String ProgrammerSpecl;
     private int ProgrammerExperience;
@@ -42,6 +43,7 @@ public class ProgrammerAnalystDetail {
     public void setProgrammerSpecl(String ProgrammerSpecl) {
         this.ProgrammerSpecl = ProgrammerSpecl;
     }
+
     /**
      * @return the ProgrammerExperience
      */

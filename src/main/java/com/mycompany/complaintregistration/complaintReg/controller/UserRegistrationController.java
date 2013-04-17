@@ -1,4 +1,3 @@
-
 package com.mycompany.complaintregistration.complaintReg.controller;
 
 import com.mycompany.complaintregistration.complaintReg.UserRegistration;
@@ -26,33 +25,33 @@ public class UserRegistrationController {
 
     @RequestMapping(value = "/userRegistration.htm", method = RequestMethod.GET)
     public String getUserRegForm(@RequestParam(value = "userId", required = false) Integer userId, Model m) {
-       /* if(session.getAttribute("user")==null){
-            return "redirect:/mainLogin.htm";
-        }*/
+        /* if(session.getAttribute("user")==null){
+         return "redirect:/mainLogin.htm";
+         }*/
         //session.invalidate();
-      //  UserRegistration ss = (UserRegistration) session.getAttribute("user");
+        //  UserRegistration ss = (UserRegistration) session.getAttribute("user");
         UserRegistration ur = null;//new UserRegistration();
         if (userId == null) {
             ur = new UserRegistration();
         } else {
             ur = userRepo.read(userId);
         }
-       // m.addAttribute("session",ss);
-        int userCount= userRepo.userCount()+1;
-        m.addAttribute("usrCont",userCount);
+        // m.addAttribute("session",ss);
+        int userCount = userRepo.userCount() + 1;
+        m.addAttribute("usrCont", userCount);
         m.addAttribute("userForm", ur);
         m.addAttribute("userList", userRepo.getUserDetal());
         return "complaint/userRegistration";
     }
 
     @RequestMapping(value = "/userRegistration.htm", method = RequestMethod.POST)
-    public String saveUserRegform(@ModelAttribute("userForm") UserRegistration ureg, @RequestParam(value = "userId", defaultValue = "0") Integer userId,Model m, BindingResult err) {
+    public String saveUserRegform(@ModelAttribute("userForm") UserRegistration ureg, @RequestParam(value = "userId", defaultValue = "0") Integer userId, Model m, BindingResult err) {
         new UserRegistrationValidation().validate(err, ureg, (userId == 0));
         if (err.hasErrors()) {
             return "complaint/userRegistration";
         }
         userRepo.save(ureg, (userId == 0));
-        m.addAttribute("userCountShow","Your System Generated User Id is "+ureg.getUserId());
+        m.addAttribute("userCountShow", "Your System Generated User Id is " + ureg.getUserId());
         return "complaint/userRegistration";
     }
 }

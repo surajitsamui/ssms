@@ -11,13 +11,14 @@ import java.util.Date;
  * @author mmc-pc1
  */
 public class Complaint {
+
     private int complaintNo;
     private String complaintDesc;
     private int complaintUserId;
     private String complaintType;
-    private Date complaintDate=new Date();
+    private Date complaintDate = new Date();
     private Date complaintSolved;
-    private String adminStatus="Pending";
+    private String adminStatus = "Pending";
     private String userFeedback;
     private int adminAsign;
 
@@ -28,7 +29,6 @@ public class Complaint {
     public void setAdminAsign(int adminAsign) {
         this.adminAsign = adminAsign;
     }
-    
 
     /**
      * @return the complaintNo
@@ -141,5 +141,4 @@ public class Complaint {
     public void setUserFeedback(String userFeedback) {
         this.userFeedback = userFeedback;
     }
-   
 }

@@ -11,6 +11,7 @@ import java.util.Date;
  * @author mmc-pc1
  */
 public class AdminComplaint {
+
     private int complaintNo;
     private Date adminToPa;
     private Date paToAdmin;
@@ -71,5 +72,4 @@ public class AdminComplaint {
     public void setPaStatus(String paStatus) {
         this.paStatus = paStatus;
     }
-
 }

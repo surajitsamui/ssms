@@ -13,11 +13,18 @@ import java.util.Map;
  * @author mmc-pc1
  */
 public interface UserRegistrationRepo {
+
     UserRegistration read(int uId);
+
     void save(UserRegistration uComp, boolean add);
+
     List<UserRegistration> getUserDetal();
-    int login(UserRegistration uuu,int uId,String pass,int cat);
+
+    int login(UserRegistration uuu, int uId, String pass, int cat);
+
     int logCheck(int uId);
+
     List<Integer> getProgrammer(int id);
+
     public int userCount();
 }

@@ -11,7 +11,8 @@ import java.util.Date;
  * @author mmc-pc1
  */
 public class UserRegistration {
-    private int    userId;
+
+    private int userId;
     private String initial;
     private String name;
     private String add;
@@ -19,7 +20,7 @@ public class UserRegistration {
     private String eMail;
     private String desiredPassWord;
     private String tempPassWord;
-    private int adminUser=1;
+    private int adminUser = 1;
 
     public int getAdminUser() {
         return adminUser;
@@ -28,6 +29,7 @@ public class UserRegistration {
     public void setAdminUser(int adminUser) {
         this.adminUser = adminUser;
     }
+
     /**
      * @return the userId
      */
@@ -139,9 +141,4 @@ public class UserRegistration {
     public void setTempPassWord(String tempPassWord) {
         this.tempPassWord = tempPassWord;
     }
-
-   
-
-    
-    
 }

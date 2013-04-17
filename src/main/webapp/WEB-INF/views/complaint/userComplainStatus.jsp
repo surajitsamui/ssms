@@ -42,63 +42,63 @@
 </c:forEach>--%>
 
 
-  <font color="grey"><u><h2>PENDING COMPLAINTS :</h2></u></font>
-    <table  align="center">
-        
+<font color="grey"><u><h2>PENDING COMPLAINTS :</h2></u></font>
+<table  align="center">
+
     <tr> <td>  <font color="grey"><u><b>Complaint No</b></u></font> </td>
-    <td>  <font color="grey"><u><b>Complaint Description</b></u></font> </td>
+<td>  <font color="grey"><u><b>Complaint Description</b></u></font> </td>
 <td>  <font color="grey"><u><b>Complaint type</b></u></font> </td></tr>
 
 
 <c:forEach items="${statusPendingUnsolved}" var="ss">
-<tr>  <td>${ss.complaintNo}</td>
-     <td>     ${ss.complaintDesc}</td>
-         <td>     ${ss.complaintType}</td>
-            
+    <tr>  <td>${ss.complaintNo}</td>
+        <td>     ${ss.complaintDesc}</td>
+        <td>     ${ss.complaintType}</td>
 
-             <%--sf:form commandName="feedback">
-                 
-                 <td> <sf:input path="userFeedback"/></td>
-                 
-                 <sf:hidden path="complaintNo" value="${ss.complaintNo}"/>
-                 <td><input type="submit" value="Submit Feedback"/></td>
-             </sf:form--%>
-                 
-</tr>
-     
+
+        <%--sf:form commandName="feedback">
+            
+            <td> <sf:input path="userFeedback"/></td>
+            
+            <sf:hidden path="complaintNo" value="${ss.complaintNo}"/>
+            <td><input type="submit" value="Submit Feedback"/></td>
+        </sf:form--%>
+
+    </tr>
+
 </c:forEach>
-           
+
 </table><hr><br>
 <font color="grey"><u><h2>SOLVED COMPLAINTS :</h2></u></font>
 
 <table  align="center">
-        
+
     <tr> <td>  <font color="grey"><u><b>Complaint No</b></u></font> </td>
-    <td>  <font color="grey"><u><b>Complaint Description</b></u></font> </td>
+<td>  <font color="grey"><u><b>Complaint Description</b></u></font> </td>
 <td>  <font color="grey"><u><b>Complaint type</b></u></font> </td>
 
 <td>  <font color="grey"><u><b>Feedback</b></u></font> </td></tr>
 
 ${msgz}
 <c:forEach items="${statusSolved}" var="sss">
-<tr>  <td>${sss.complaintNo}</td>
-     <td>     ${sss.complaintDesc}</td>
-         <td>     ${sss.complaintType}</td>
-         
-            
+    <tr>  <td>${sss.complaintNo}</td>
+        <td>     ${sss.complaintDesc}</td>
+        <td>     ${sss.complaintType}</td>
 
-             <sf:form commandName="feedback">
-                 
-                 <td> <sf:input path="userFeedback"/></td>
-                 
-                 <sf:hidden path="complaintNo" value="${ss.complaintNo}"/>
-                 <td><input type="submit" value="Submit Feedback"/></td>
-             </sf:form>
-                 
-</tr>
-     
+
+
+        <sf:form commandName="feedback">
+
+            <td> <sf:input path="userFeedback"/></td>
+
+            <sf:hidden path="complaintNo" value="${ss.complaintNo}"/>
+            <td><input type="submit" value="Submit Feedback"/></td>
+            </sf:form>
+
+    </tr>
+
 </c:forEach>
-           
+
 </table><hr>
 
 </body>

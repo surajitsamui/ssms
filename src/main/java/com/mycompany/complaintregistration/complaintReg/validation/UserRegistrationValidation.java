@@ -51,7 +51,7 @@ public class UserRegistrationValidation {
         if (!StringUtils.hasText(usr.getName())) {
             err.rejectValue("Name", null, "Enter Name Correctly");
         }
-       if (StringUtils.hasText(usr.geteMail())) {//Email
+        if (StringUtils.hasText(usr.geteMail())) {//Email
             for (int i = 0; i < usr.geteMail().length(); i++) {
                 if (usr.geteMail().contains("@") && usr.geteMail().contains(".")) {
                     System.out.println("");
@@ -59,16 +59,16 @@ public class UserRegistrationValidation {
                     err.rejectValue("eMail", null, "Not Valid E mail");
                 }
             }
-        }else {
-                    err.rejectValue("eMail", null, "Blank E mail");
-                }
-       
-       if(!StringUtils.hasText(usr.getDesiredPassWord())){
-           err.rejectValue("desiredPassWord", null, "Blank Password!");
-       }else if(usr.getDesiredPassWord().length()!=10){
-           err.rejectValue("desiredPassWord", null," 10 Char");
-       }
-       
+        } else {
+            err.rejectValue("eMail", null, "Blank E mail");
+        }
+
+        if (!StringUtils.hasText(usr.getDesiredPassWord())) {
+            err.rejectValue("desiredPassWord", null, "Blank Password!");
+        } else if (usr.getDesiredPassWord().length() != 10) {
+            err.rejectValue("desiredPassWord", null, " 10 Char");
+        }
+
         if (!usr.getTempPassWord().equals(usr.getDesiredPassWord())) {//confPass
             err.rejectValue("tempPassWord", null, "PassError");
         }

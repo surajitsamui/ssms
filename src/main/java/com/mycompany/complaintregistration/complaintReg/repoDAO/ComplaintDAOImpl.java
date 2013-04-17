@@ -201,8 +201,9 @@ public class ComplaintDAOImpl implements ComplaintRepo {
                 return complaint1;
             }
          ;
-    },complaintUserId,"Pending","Unsolved");
+    },complaintUserId, "Pending", "Unsolved");
     }
+
     @Override
     public List<Complaint> statusSolvedProgToUser(int complaintUserId) {
         String sql = "Select COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK from SSR_COMPLAINT WHERE COMPL_USERID=? and ADMIN_STATUS=? ORDER BY compl_no DESC";
@@ -222,8 +223,9 @@ public class ComplaintDAOImpl implements ComplaintRepo {
                 return complaint1;
             }
          ;
-    },complaintUserId,"Solved");
+    },complaintUserId, "Solved");
     }
+
     @Override
     public void feedbackUpdate(Complaint com) {
         String sqlUpdate = "update ssr_complaint set USER_FEEDBACK=? where compl_no=?";

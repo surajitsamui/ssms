@@ -17,63 +17,63 @@
     </head>
     <body bgcolor='#E6E6E6'>
         <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"> <font color="grey">Welcome <u>${userId.name}</u> to NLC User Home Page</font></h1><hr>
-        
+
         <br>
         <table align="center" >
             <tbody >
                 <tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
                         <input type="reset" value="Home" onclick="location = 'userHomePage.htm';"/>
                     </td>
-                
-                <td bgcolor="#FF9E0E" colspan="40" height="20">
+
+                    <td bgcolor="#FF9E0E" colspan="40" height="20">
                         <input type="reset" value="Status" onclick="location = 'userComplainStatus.htm';"/>
                     </td>
-                
-               <td bgcolor="#FF9E0E" colspan="40" height="20">
+
+                    <td bgcolor="#FF9E0E" colspan="40" height="20">
                         <input type="reset" value="Log Out" onclick="location = 'index.jsp';"/>
                     </td></tr>
             </tbody></table>
         <hr>
         <sf:form commandName="usercompl">
-        <table align="center">
-            <tr>
-               
-                <td>
-                    <sf:hidden path="complaintNo" value="${complno}"/>
-                </td>
-            </tr>
-            
-                    <sf:hidden path="complaintUserId" value="${userId.userId}" />
-               
-           
-            <tr>
-                <th>Complaint Type</th>
-                <td>
-                    <sf:select path = "complaintType" >
-                       <sf:option value = "" label = ""/>
-                       <sf:option value = "HARDWARE" label = "HARDWARE"/>
-                       <sf:option value = "SOFTWARE" label = "SOFTWARE"/>
-                       <sf:option value = "BATTERY" label = "BATTERY"/>
-                    </sf:select>
-                    <sf:errors path="complaintType"/>
-                </td>
-            </tr>
-            
-            <tr>
-                <th>Complaint Description</th>
-                <td>
-                    <sf:textarea path="complaintDesc" rows="5" cols="15"/>
-                    <sf:errors path="complaintDesc"/>
-                </td>
-            </tr>
-            
-             <tr><td bgcolor="#FF9E0E" colspan="40" height="20">  
-                     <input type="submit" value="Submit"> </td>
-                       <td bgcolor="#FF9E0E" colspan="40" height="20">
-                           <input type="reset" value="Clear" onclick="location='userComplaint.htm';"></td>
+            <table align="center">
+                <tr>
+
+                    <td>
+                        <sf:hidden path="complaintNo" value="${complno}"/>
+                    </td>
+                </tr>
+
+                <sf:hidden path="complaintUserId" value="${userId.userId}" />
+
+
+                <tr>
+                    <th>Complaint Type</th>
+                    <td>
+                        <sf:select path = "complaintType" >
+                            <sf:option value = "" label = ""/>
+                            <sf:option value = "HARDWARE" label = "HARDWARE"/>
+                            <sf:option value = "SOFTWARE" label = "SOFTWARE"/>
+                            <sf:option value = "BATTERY" label = "BATTERY"/>
+                        </sf:select>
+                        <sf:errors path="complaintType"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Complaint Description</th>
+                    <td>
+                        <sf:textarea path="complaintDesc" rows="5" cols="15"/>
+                        <sf:errors path="complaintDesc"/>
+                    </td>
+                </tr>
+
+                <tr><td bgcolor="#FF9E0E" colspan="40" height="20">  
+                        <input type="submit" value="Submit"> </td>
+                    <td bgcolor="#FF9E0E" colspan="40" height="20">
+                        <input type="reset" value="Clear" onclick="location = 'userComplaint.htm';"></td>
                 </tr> 
-            
-        </table>
+
+            </table>
         </sf:form>
         <h3 align="center">  ${comNoGen}</h3>
     </body>

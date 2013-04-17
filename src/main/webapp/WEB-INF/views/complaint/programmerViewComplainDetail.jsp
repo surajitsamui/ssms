@@ -20,31 +20,31 @@
     <body bgcolor='#E6E6E6'>
         <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"><div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"> <font color="grey">Welcome <u>${homePageS.name}</u> to NLC Programmer Complaint Detail Page</font></h1></div><hr>
 
-        <br>
-        <table align="center" >
-            <tbody >
-                <tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
-                        <input type="reset" value="Home" onclick="location = 'programmerHomePage.htm';"/>
-                    </td>
-                    <td bgcolor="#FF9E0E" colspan="40" height="20">
-                        <input type="reset" value="Complaint" onclick="location = 'programmerViewComplain.htm';"/>
-                    </td>
+    <br>
+    <table align="center" >
+        <tbody >
+            <tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
+                    <input type="reset" value="Home" onclick="location = 'programmerHomePage.htm';"/>
+                </td>
+                <td bgcolor="#FF9E0E" colspan="40" height="20">
+                    <input type="reset" value="Complaint" onclick="location = 'programmerViewComplain.htm';"/>
+                </td>
 
 
-                    <td bgcolor="#FF9E0E" colspan="40" height="20">
-                        <input type="reset" value="Log Out" onclick="location = 'index.jsp';"/>
-                    </td></tr>
-            </tbody></table>
-        <hr>
+                <td bgcolor="#FF9E0E" colspan="40" height="20">
+                    <input type="reset" value="Log Out" onclick="location = 'index.jsp';"/>
+                </td></tr>
+        </tbody></table>
+    <hr>
 
-        <table  align="center">
+    <table  align="center">
 
-            <c:forEach items="${complaint}" var="pcoml">
+        <c:forEach items="${complaint}" var="pcoml">
 
-                <tr><td><font color="grey"><u><b>Complaint No : </b></u> </font>
-                <a href="/programmerViewComplainDetail.htm?cmId=${pcoml.complaintNo}">${pcoml.complaintNo}</a></td></tr>
+            <tr><td><font color="grey"><u><b>Complaint No : </b></u> </font>
+            <a href="/programmerViewComplainDetail.htm?cmId=${pcoml.complaintNo}">${pcoml.complaintNo}</a></td></tr>
 
-    </c:forEach>
+</c:forEach>
 </table><hr>
 <table align="center">
     <tr><td><font color="grey"><u><b>Complaint No : </b></u> </font>  ${detail.complaintNo}</td></tr>
@@ -55,12 +55,12 @@
         <sf:form commandName="setval">
 <tr><sf:hidden path="complaintNo" value="${detail.complaintNo}"/>
     <td>   <font color="grey"><u><b> Status: </b></u>
-    <sf:select path="adminStatus">
+        <sf:select path="adminStatus">
             <sf:option value="Solved" label="Solved"/>
             <sf:option value="Unsolved" label="Unsolved"/>
         </sf:select>
 <input type="submit" value="Update"/>
-    </td></tr>
+</td></tr>
 </sf:form>
 </table>
 </body>

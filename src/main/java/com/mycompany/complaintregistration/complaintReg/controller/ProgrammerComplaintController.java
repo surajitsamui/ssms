@@ -22,9 +22,9 @@ public class ProgrammerComplaintController {
     @Autowired
     ComplaintRepo comRepo;
 
-    @RequestMapping(value = "/programmerViewComplain.htm", method = RequestMethod.GET )
+    @RequestMapping(value = "/programmerViewComplain.htm", method = RequestMethod.GET)
     public String getProgComplaint(Model m, HttpSession sess) {
-        UserRegistration id= (UserRegistration) sess.getAttribute("user");
+        UserRegistration id = (UserRegistration) sess.getAttribute("user");
         Complaint complaint = new Complaint();
         m.addAttribute("complaint", comRepo.getAllComplaintAgainstProgrammer(id.getUserId()));
         //Complaint comId= comRepo.read(cmId);
@@ -32,28 +32,28 @@ public class ProgrammerComplaintController {
 
         return "complaint/programmerViewComplain";
     }
+
     @RequestMapping(value = "/programmerViewComplainDetail.htm", method = RequestMethod.GET)
-    public String getComplaintDetailByCompNoProgrammer(Model m,Model n,Model k, @RequestParam(value = "cmId", required = false) Integer cmId,HttpSession sess){
-       Complaint pComp=null;
-      if(cmId==null){
-          pComp=new Complaint();
-      }else{
-         pComp= comRepo.read(cmId);
-      }
-        n.addAttribute("detail",pComp);
-        UserRegistration id= (UserRegistration) sess.getAttribute("user");
+    public String getComplaintDetailByCompNoProgrammer(Model m, Model n, Model k, @RequestParam(value = "cmId", required = false) Integer cmId, HttpSession sess) {
+        Complaint pComp = null;
+        if (cmId == null) {
+            pComp = new Complaint();
+        } else {
+            pComp = comRepo.read(cmId);
+        }
+        n.addAttribute("detail", pComp);
+        UserRegistration id = (UserRegistration) sess.getAttribute("user");
         Complaint complaint = new Complaint();
         m.addAttribute("complaint", comRepo.getAllComplaintAgainstProgrammer(id.getUserId()));
-        Complaint comm= new Complaint();
-        k.addAttribute("setval",comm);
+        Complaint comm = new Complaint();
+        k.addAttribute("setval", comm);
         return "complaint/programmerViewComplainDetail";
     }
 
     @RequestMapping(value = "/programmerViewComplainDetail.htm", method = RequestMethod.POST)
-    public String setStatus(@ModelAttribute ("setval") Complaint co,Model l){
+    public String setStatus(@ModelAttribute("setval") Complaint co, Model l) {
         comRepo.statusUpdate(co);
-        l.addAttribute("msz","Updated");
+        l.addAttribute("msz", "Updated");
         return "complaint/programmerViewComplain";
     }
-    
 }

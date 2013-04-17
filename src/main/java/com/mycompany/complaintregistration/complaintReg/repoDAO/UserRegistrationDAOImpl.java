@@ -93,12 +93,12 @@ public class UserRegistrationDAOImpl implements UserRegistrationRepo {
 
     @Override
     public List<Integer> getProgrammer(int id) {
-        String sqlProg = "select user_id from SSR_USER_REGISTRATION where admin =?";       
-        return jdbcTemp.queryForList(sqlProg,Integer.class,  1);
+        String sqlProg = "select user_id from SSR_USER_REGISTRATION where admin =?";
+        return jdbcTemp.queryForList(sqlProg, Integer.class, 1);
     }
+
     @Override
     public int userCount() {
         return jdbcTemp.queryForInt("select count(*) from SSR_USER_REGISTRATION");
     }
-    
 }

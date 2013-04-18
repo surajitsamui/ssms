@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author Samim
  */
 @Controller
-public class ComplaintController extends UsingMap{
+public class ComplaintController extends UsingMap {
 
     @Autowired
     ComplaintRepo complrepo;

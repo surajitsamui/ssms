@@ -22,10 +22,11 @@
         <table align="center" >
 
             <tbody >
-                <tr>
+                <%@include file="../common/header.jsp" %>
+                <%--tr>
                     <td bgcolor="#FF9E0E" colspan="40" height="20" >   <c:forEach items="${menu}" var="map">
                 <input type="button" value="${map.key}" onclick="location ='${map.value}';"/>
-                        </c:forEach></td></tr>
+                        </c:forEach></td></tr--%>
             <%--td bgcolor="#FF9E0E" colspan="40" height="20" >
                 <input type="reset" value="Home" onclick="location = 'userHomePage.htm';"/>
             </td--%>

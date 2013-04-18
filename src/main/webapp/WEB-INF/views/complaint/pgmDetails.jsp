@@ -22,7 +22,8 @@
     <br>
     <table align="center" >
         <tbody >
-            <tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
+            <%@include file="../common/header.jsp" %>
+            <%--tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
                     <input type="reset" value="Home" onclick="location = 'programmerHomePage.htm';"/>
                 </td>
                 <td bgcolor="#FF9E0E" colspan="40" height="20">
@@ -35,7 +36,7 @@
 
                 <td bgcolor="#FF9E0E" colspan="40" height="20">
                     <input type="reset" value="Log Out" onclick="location = 'index.jsp';"/>
-                </td></tr>
+                </td></tr--%>
         </tbody></table>
     <hr>
     <table align="center">

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author mmc-pc1
  */
 @Controller
-public class UserRegistrationController {
+public class UserRegistrationController extends UsingMap{
 
     @Autowired
     UserRegistrationRepo userRepo;

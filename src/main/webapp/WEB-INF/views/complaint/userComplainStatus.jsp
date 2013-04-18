@@ -17,15 +17,15 @@
         <title>Complaint status Page</title>
     </head>
     <body bgcolor='#E6E6E6'>
-        <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"> <div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"><font color="grey">Welcome <u>${homePageS.name}</u> to NLC User Home Page</font></h1></div><hr>
+        <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"> <div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"><font color="grey">Welcome <u>${homePageS.name}</u> to NLC User Home Page</font></div></h1><hr>
 
     <br>
     <table align="center" >
         <tbody >
-            <tr>
-                    <td>   <c:forEach items="${menu}" var="map">
+            <%@include file="../common/header.jsp"%>
+                    <%--td>   <c:forEach items="${menu}" var="map">
                 <input type="button" value="${map.key}" onclick="location ='${map.value}';"/>
-                        </c:forEach></td></tr>
+</c:forEach></td></tr--%>
             <%--tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
                     <input type="reset" value="Home" onclick="location = 'userHomePage.htm';"/>
                 </td>

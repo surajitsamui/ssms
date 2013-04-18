@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author mmc-pc1
  */
 @Controller
-public class HomePageController {
+public class HomePageController extends UsingMap{
 
     @RequestMapping(value = "/userHomePage.htm", method = RequestMethod.GET)
     public String homePage(HttpSession session, Model m) {

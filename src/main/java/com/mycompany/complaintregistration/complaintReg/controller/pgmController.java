@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author Sintu Pal
  */
 @Controller
-public class pgmController {
+public class pgmController extends UsingMap{
 
     @Autowired
     pgmRepo repo;

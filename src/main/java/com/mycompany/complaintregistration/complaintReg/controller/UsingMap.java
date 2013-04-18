@@ -21,8 +21,9 @@ public abstract class UsingMap {
         UserRegistration us = (UserRegistration) session.getAttribute("user");
         Map<String, String> home = new HashMap<String, String>();
         if (us.getAdminUser() == 0) {
-            home.put("Home", "/userHomePage.htm");
+
             home.put("New Complaint", "/userComplaint.htm");
+            home.put("Home", "/userHomePage.htm");
             home.put("Status", "/userComplainStatus.htm");
         }
         if (us.getAdminUser() == 1) {

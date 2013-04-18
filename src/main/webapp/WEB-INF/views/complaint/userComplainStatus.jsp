@@ -22,7 +22,11 @@
     <br>
     <table align="center" >
         <tbody >
-            <tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
+            <tr>
+                    <td>   <c:forEach items="${menu}" var="map">
+                <input type="button" value="${map.key}" onclick="location ='${map.value}';"/>
+                        </c:forEach></td></tr>
+            <%--tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
                     <input type="reset" value="Home" onclick="location = 'userHomePage.htm';"/>
                 </td>
                 <td bgcolor="#FF9E0E" colspan="40" height="20">
@@ -34,7 +38,7 @@
 
                 <td bgcolor="#FF9E0E" colspan="40" height="20">
                     <input type="reset" value="Log Out" onclick="location = 'index.jsp';"/>
-                </td></tr>
+                </td></tr--%>
         </tbody></table>
     <hr>
     <%--<c:forEach items="${status}" var="ss">

@@ -18,7 +18,7 @@
     </head>
 
     <body bgcolor='#E6E6E6'>
-        <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"><div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"><font color="grey">Welcome To NLC Online Complaint Registration System </font></h1></div><hr>
+        <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"><div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"><font color="grey">Welcome To NLC Online Complaint Registration System </font></div></h1><hr>
     <table align="center">
         <sf:form commandName="login">
 

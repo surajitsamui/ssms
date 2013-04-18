@@ -17,8 +17,19 @@
     </head>
     <body bgcolor='#E6E6E6'>
         <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"> <div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"><font color="grey">Welcome <u>${homePageS.name}</u> to NLC Administrator Complaint Details View Page</font></h1></div<hr>
+<hr>
+<table  align="center">
+        <tr><td><font color="grey"><u><b>Your ID:</b></u></font>      ${homePageS.userId}||</td>
+<td><font color="grey"><u><b> Name:</b></u></font>    ${homePageS.initial}${homePageS.name}||</td>
+<td><font color="grey"><u><b> Address : </b></u> </font>  ${homePageS.add}||</td>
+<td><font color="grey"><u><b> Mobile No.: </b></u> </font>${homePageS.mobile}||</td>
+<td><font color="grey"><u><b> E-Mail: </b></u></font><a href="${homePageS.eMail}?=${homePageS.eMail}">${homePageS.eMail}</a> </td></tr>
+        <%--tr><td><font color="grey"><u><b>User Cat. : </b></u></font>  ${homePageS.adminUser}</td></tr--%>
 
-    <br>
+
+
+</table>
+    <br><hr>
     <table align="center" >
         <tbody>
             <%@include file="../common/header.jsp" %>
@@ -32,7 +43,7 @@
 
                 <td bgcolor="#FF9E0E" colspan="40" height="20">
                     <input type="reset" value="Log Out" onclick="location = 'index.jsp';"/>
-                </td></tr--%><hr>
+                </td></tr--%>
         </tbody></table>
     <hr><br>
 

@@ -10,114 +10,70 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="st" %>
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home Page</title>
     </head>
     <body bgcolor='#E6E6E6'>
-        <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"> <div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"><font color="grey">Welcome <u>${homePageS.name}</u> to NLC Administrator Complaint Details View Page</font></h1></div<hr>
+        <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"><div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"> <font color="grey">Welcome <u>${homePageS.name}</u> to NLC Programmer Complaint Detail Page</font></h1></div><hr>
 
     <br>
     <table align="center" >
-        <tbody>
-            <tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
-                    <input type="reset" value="Home" onclick="location = 'adminHomePage.htm';"/>
+        <tbody >
+            <%@include file="../common/header.jsp" %>
+            <%--tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
+                    <input type="reset" value="Home" onclick="location = 'programmerHomePage.htm';"/>
                 </td>
                 <td bgcolor="#FF9E0E" colspan="40" height="20">
-                    <input type="reset" value="Complaints" onclick="location = 'adminViewCComplainDetails.htm';"/>
+                    <input type="reset" value="Complaint" onclick="location = 'programmerViewComplain.htm';"/>
                 </td>
 
 
                 <td bgcolor="#FF9E0E" colspan="40" height="20">
                     <input type="reset" value="Log Out" onclick="location = 'index.jsp';"/>
-                </td></tr><hr>
+                </td></tr--%>
         </tbody></table>
-    <hr><br>
+    <hr>
 
+    <table  align="center">
 
-    <table  align="left"  cellpadding="1" style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
+        <c:forEach items="${complaint}" var="pcoml">
 
-        <tbody>
+            <tr><td><font color="grey"><u><b>Complaint No : </b></u> </font>
+            <a href="/programmerViewComplainDetail.htm?cmId=${pcoml.complaintNo}">${pcoml.complaintNo}</a></td></tr>
 
-            <%--div style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;"--%>
-            <tr>
-                <td> <b> PENDING COMPLAINTS</b></td></tr>
-            <tr>  <td>  <font color="grey"><u><b>Complained By</b></u></font></td>
-    <td> <font color="grey"><u><b>Complaint No</b></u></font>  </td> 
-</tr>
-
-<c:forEach items="${pending}" var="ff">
-    <tr>  <td>  ${ff.complaintUserId}</td>
-        <td>  <a href="/adminViewCComplainDetails.htm?cId=${ff.complaintNo}">${ff.complaintNo}</a><br></td></tr>
-        </c:forEach>
-</tbody>       
-</table>
-<table  align="right"  cellpadding="1" style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
-    <tbody>
-
-        <%--div style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;"--%>
-        <tr>
-            <td>  <b> SOLVED COMPLAINTS</b></td></tr>
-        <tr>
-
-            <td>  <font color="grey"><u><b>Complained By</b></u></font></td>
-<td> <font color="grey"><u><b>Complaint No</b></u></font>  </td> 
-</tr>
-
-<c:forEach items="${solved}" var="ff">
-    <tr>  <td>  ${ff.complaintUserId}</td>
-        <td>  <a href="/adminViewCComplaintViewSolved.htm?cId=${ff.complaintNo}">${ff.complaintNo}</a><br></td></tr>
-        </c:forEach>
-</tbody>       
-</table>
-
-<%--/div><div style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">shkdgfjdsf</div--%>
-
-
-<table  align="center"  cellpadding="1" style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
-    <tbody>
-
-        <%--div style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;"--%>
-        <tr>
-            <td>  <b> UNSOLVED COMPLAINTS</b></td></tr>
-        <tr>
-            <td>  <font color="grey"><u><b>Complained By</b></u></font></td>
-<td> <font color="grey"><u><b>Complaint No</b></u></font>  </td> 
-</tr>
-
-<c:forEach items="${unsolved}" var="ff">
-    <tr>  <td>  ${ff.complaintUserId}</td>
-        <td>  <a href="/adminViewCComplainDetails.htm?cId=${ff.complaintNo}">${ff.complaintNo}</a><br></td></tr>
-        </c:forEach>
-</tbody>       
-</table ><hr>
-<table  align="center"  style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
-
-
+</c:forEach>
+</table><hr>
+<table align="center">
     <tr><td><font color="grey"><u><b>Complaint No : </b></u> </font>  ${detail.complaintNo}</td></tr>
 <tr><td><font color="grey"><u><b>Complaint Type : </b></u> </font>  ${detail.complaintType}</td></tr>
 <tr><td><font color="grey"><u><b>Complaint Description: </b></u> </font>${detail.complaintDesc}</td></tr>
 <tr><td><font color="grey"><u><b>Complaint Date: </b></u></font> ${detail.complaintDate}</td></tr>
-<tr><td><font color="grey"><u><b>Complaint Status: </b></u></font> ${detail.adminStatus}</td></tr>
-        <%--tr><td><font color="grey"><u><b>Solved Date: </b></u></font> ${detail.complaintSolved}</td></tr--%>
+        <c:if test="${detail.adminStatus eq 'P'}">
+<tr><td><font color="grey"><u><b>Complaint Status: </b></u></font> Pending</td></tr>
+    </c:if> 
+    <c:if test="${detail.adminStatus eq 'S'}">
+<tr><td><font color="grey"><u><b>Complaint Status: </b></u></font> Solved</td></tr>
+    </c:if> 
 
-<%--sf:form commandName="dd">
+<c:if test="${detail.adminStatus eq 'R'}">
+    <tr><td><font color="grey"><u><b>Complaint Status: </b></u></font> Returned To Administrator</td></tr>
+        </c:if> 
+
+
+<sf:form commandName="setval">
     <tr><sf:hidden path="complaintNo" value="${detail.complaintNo}"/>
-        <td><font color="grey"><u><b>Programmer to Assign: </b></u></font> 
-            <sf:select path="adminAsign">
-                <sf:options items="${prog}" />
+        <td>   <font color="grey"><u><b> Status: </b></u>
+            <sf:select path="adminStatus">
+                <sf:option value="S" label="Solved"/>
+                <sf:option value="R" label="Return"/>
             </sf:select>
+    <input type="submit" value="Update"/>
 </td></tr>
-<tr><td><td><input type="submit" value="Asign"/></td></tr>
-    </sf:form--%>
-
+</sf:form>
 </table>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<font color="red" ><h3 align="right">~SSR</h3></font>
-
 </body>
 </html>
-
-

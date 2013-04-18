@@ -1,8 +1,10 @@
 package com.mycompany.complaintregistration.complaintReg.controller;
 
 import com.mycompany.complaintregistration.complaintReg.Complaint;
+import com.mycompany.complaintregistration.complaintReg.UserRegistration;
 import com.mycompany.complaintregistration.complaintReg.repoDAO.ComplaintRepo;
 import com.mycompany.complaintregistration.complaintReg.repoDAO.UserRegistrationRepo;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +33,12 @@ public class AdminComplaintController extends UsingMap{
     }
 
     @RequestMapping(value = "/adminViewCComplainDetails.htm", method = RequestMethod.GET)
-    public String getComplaintDetailByCompNo(Model m, @RequestParam(value = "cId", required = false) Integer cId) {
+    public String getComplaintDetailByCompNo(Model m, @RequestParam(value = "cId", required = false) Integer cId, HttpSession session) {
+        if (session.getAttribute("user") == null) {
+            return "redirect:/mainLogin.htm";
+        }
+        UserRegistration uu = (UserRegistration) session.getAttribute("user");
+        m.addAttribute("homePageS", uu);
         Complaint com = null;
         if (cId == null) {
             com = new Complaint();
@@ -54,7 +61,7 @@ public class AdminComplaintController extends UsingMap{
         m.addAttribute("mszz", "Updated OK");
         return "complaint/adminViewCComplainDetails";
     }
-    /*@RequestMapping(value = "/adminViewCComplaintViewSolved.htm", method = RequestMethod.GET)
+ /*@RequestMapping(value = "/adminViewCComplaintViewSolved.htm", method = RequestMethod.GET)
      public String getComplaintDetailByCompNoSolved(Model m, @RequestParam(value = "cId", required = false) Integer cId){
      Complaint com = null;
      if(cId==null){

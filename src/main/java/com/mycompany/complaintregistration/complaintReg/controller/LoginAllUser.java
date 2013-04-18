@@ -56,7 +56,7 @@ public class LoginAllUser {
                     path = "redirect:/programmerHomePage.htm";
                     break;
                 case 2:
-                    path = "redirect:/adminHomePage.htm";
+                    path = "redirect:/adminViewCComplainDetails.htm";
                     break;
                 default:
                     throw new RuntimeException("categor not found");

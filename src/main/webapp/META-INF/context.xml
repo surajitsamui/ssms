@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="">
+<Context antiJARLocking="true" path="/complaintRegistration">
   <Resource driverClassName="oracle.jdbc.driver.OracleDriver" maxActive="10" maxIdle="1" maxWait="5000" name="jdbc/OracleDS" password="demo" type="javax.sql.DataSource" url="jdbc:oracle:thin:@172.16.104.68:1521:dev" username="demo"/>
 </Context>

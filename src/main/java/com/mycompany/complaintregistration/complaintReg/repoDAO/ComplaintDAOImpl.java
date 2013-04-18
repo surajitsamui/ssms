@@ -1,13 +1,10 @@
 package com.mycompany.complaintregistration.complaintReg.repoDAO;
 
 import com.mycompany.complaintregistration.complaintReg.Complaint;
-import com.mycompany.complaintregistration.complaintReg.repoDAO.ComplaintRepo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -88,34 +85,34 @@ public class ComplaintDAOImpl implements ComplaintRepo {
     @Override
     public List<Complaint> getAllComplaintPending() {
         String sqlstmt = "Select COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK,ADMIN_ASSIGN from SSR_COMPLAINT where ADMIN_STATUS=? order by COMPL_NO desc ";
-        return jdbct.query(sqlstmt, new readComplaintRow(), "Pending");
+        return jdbct.query(sqlstmt, new readComplaintRow(), "P");
     }
 //Admin View
 
     @Override
     public List<Complaint> getAllComplaintSolved() {
         String sqlstmt = "Select COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK,ADMIN_ASSIGN from SSR_COMPLAINT where ADMIN_STATUS=? order by COMPL_NO desc ";
-        return jdbct.query(sqlstmt, new readComplaintRow(), "Solved");
+        return jdbct.query(sqlstmt, new readComplaintRow(), "S");
     }
 //Admin View
 
     @Override
     public List<Complaint> getAllComplaintUnSolved() {
         String sqlstmt = "Select COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK,ADMIN_ASSIGN from SSR_COMPLAINT where ADMIN_STATUS=? order by COMPL_NO desc ";
-        return jdbct.query(sqlstmt, new readComplaintRow(), "Unsolved");
+        return jdbct.query(sqlstmt, new readComplaintRow(), "R");
     }
 //User Status
 
     @Override
     public List<Complaint> statusPendingUnsolvedProgToUser(int complaintUserId) {
         String sql = "Select COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK ,ADMIN_ASSIGN from SSR_COMPLAINT WHERE COMPL_USERID=? and (ADMIN_STATUS=? or ADMIN_STATUS=?) ORDER BY compl_no DESC";
-        return jdbct.query(sql, new readComplaintRow(), complaintUserId, "Pending", "Unsolved");
+        return jdbct.query(sql, new readComplaintRow(), complaintUserId, "P", "R");
     }
 
     @Override
     public List<Complaint> statusSolvedProgToUser(int complaintUserId) {//User Status
         String sql = "Select COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK ,ADMIN_ASSIGN from SSR_COMPLAINT WHERE COMPL_USERID=? and ADMIN_STATUS=? ORDER BY compl_no DESC";
-        return jdbct.query(sql, new readComplaintRow(), complaintUserId, "Solved");
+        return jdbct.query(sql, new readComplaintRow(), complaintUserId, "S");
     }
 //User Feedback
 

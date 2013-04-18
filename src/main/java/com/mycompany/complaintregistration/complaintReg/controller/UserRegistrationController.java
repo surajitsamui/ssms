@@ -3,7 +3,6 @@ package com.mycompany.complaintregistration.complaintReg.controller;
 import com.mycompany.complaintregistration.complaintReg.UserRegistration;
 import com.mycompany.complaintregistration.complaintReg.repoDAO.UserRegistrationRepo;
 import com.mycompany.complaintregistration.complaintReg.validation.UserRegistrationValidation;
-import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

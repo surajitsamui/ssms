@@ -52,13 +52,24 @@
 <tr><td><font color="grey"><u><b>Complaint Type : </b></u> </font>  ${detail.complaintType}</td></tr>
 <tr><td><font color="grey"><u><b>Complaint Description: </b></u> </font>${detail.complaintDesc}</td></tr>
 <tr><td><font color="grey"><u><b>Complaint Date: </b></u></font> ${detail.complaintDate}</td></tr>
-<tr><td><font color="grey"><u><b>Complaint Status: </b></u></font> ${detail.adminStatus}</td></tr>
+        <c:if test="${detail.adminStatus eq 'P'}">
+        <tr><td><font color="grey"><u><b>Complaint Status: </b></u></font> Pending</td></tr>
+        </c:if> 
+            <c:if test="${detail.adminStatus eq 'S'}">
+        <tr><td><font color="grey"><u><b>Complaint Status: </b></u></font> Solved</td></tr>
+        </c:if> 
+
+            <c:if test="${detail.adminStatus eq 'R'}">
+        <tr><td><font color="grey"><u><b>Complaint Status: </b></u></font> Returned To Administrator</td></tr>
+        </c:if> 
+
+
         <sf:form commandName="setval">
 <tr><sf:hidden path="complaintNo" value="${detail.complaintNo}"/>
     <td>   <font color="grey"><u><b> Status: </b></u>
         <sf:select path="adminStatus">
-            <sf:option value="Solved" label="Solved"/>
-            <sf:option value="Unsolved" label="Unsolved"/>
+            <sf:option value="S" label="Solved"/>
+            <sf:option value="R" label="Return"/>
         </sf:select>
 <input type="submit" value="Update"/>
 </td></tr>

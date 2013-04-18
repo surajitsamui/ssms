@@ -18,7 +18,7 @@ public class Complaint {
     private String complaintType;
     private Date complaintDate = new Date();
     private Date complaintSolved;
-    private String adminStatus = "Pending";
+    private String adminStatus = "P";////// P - Pending// S - Solved///  R - Return
     private String userFeedback;
     private int adminAsign;
 

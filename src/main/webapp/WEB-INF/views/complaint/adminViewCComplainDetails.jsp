@@ -32,7 +32,9 @@
     <br><hr>
     <table align="center" >
         <tbody>
-            <%@include file="../common/header.jsp" %>
+            <%@include file="../common/header.jsp" %> 
+                   
+                
             <%--tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
                     <input type="reset" value="Home" onclick="location = 'adminHomePage.htm';"/>
                 </td>

@@ -32,7 +32,7 @@ public abstract class UsingMap {
             home.put("Complaints", "/programmerViewComplain.htm");
         }
         if (us.getAdminUser() == 2) {
-            //home.put("Home", "/adminHomePage.htm");
+            home.put("Update Profile", "/adminHomePage.htm");
             home.put("Complaints", "/adminViewCComplainDetails.htm");
         }
         home.put("Log Out", "/index.jsp");

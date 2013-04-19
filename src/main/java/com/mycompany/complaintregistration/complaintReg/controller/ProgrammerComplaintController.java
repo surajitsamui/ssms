@@ -3,6 +3,8 @@ package com.mycompany.complaintregistration.complaintReg.controller;
 import com.mycompany.complaintregistration.complaintReg.Complaint;
 import com.mycompany.complaintregistration.complaintReg.repoDAO.ComplaintRepo;
 import com.mycompany.complaintregistration.complaintReg.UserRegistration;
+import java.util.Date;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -52,6 +54,8 @@ public class ProgrammerComplaintController extends UsingMap{
 
     @RequestMapping(value = "/programmerViewComplainDetail.htm", method = RequestMethod.POST)
     public String setStatus(@ModelAttribute("setval") Complaint co, Model l) {
+        Date dd= new Date();
+        co.setComplaintSolved(dd);
         comRepo.statusUpdate(co);
         l.addAttribute("msz", "Updated");
         return "complaint/programmerViewComplain";

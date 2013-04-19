@@ -51,13 +51,15 @@
 
     <tr> <td>  <font color="grey"><u><b> No</b></u></font> </td>
 <td>  <font color="grey"><u><b> Description</b></u></font> </td>
-<td>  <font color="grey"><u><b>Type</b></u></font> </td></tr>
+<td>  <font color="grey"><u><b>Type</b></u></font> </td>
+            <td>  <font color="grey"><u><b>Pending Days</b></u></font> </td></tr>
 
 
 <c:forEach items="${statusPendingUnsolved}" var="ss">
     <tr>  <td>${ss.complaintNo}</td>
         <td>     ${ss.complaintDesc}</td>
         <td>     ${ss.complaintType}</td>
+        <%--td>     ${ss.pendingDays}</td--%>
 
 
         <%--sf:form commandName="feedback">
@@ -81,13 +83,20 @@
 <td>  <font color="grey"><u><b>Description</b></u></font> </td>
 <td>  <font color="grey"><u><b> Type</b></u></font> </td>
 
-<td>  <font color="grey"><u><b>Feedback</b></u></font> </td></tr>
+<td>  <font color="grey"><u><b>Complaint Date</b></u></font> </td>
+            <td>  <font color="grey"><u><b>Solve Date</b></u></font> </td>
+            
+            <td>  <font color="grey"><u><b>Feedback</b></u></font> </td></tr>
+            
 
 ${msgz}
 <c:forEach items="${statusSolved}" var="sss">
     <tr>  <td>${sss.complaintNo}</td>
         <td>     ${sss.complaintDesc}</td>
         <td>     ${sss.complaintType}</td>
+        <td>     ${sss.complaintDate}</td>
+        <td>     ${sss.complaintSolved}</td>
+        
 
 
 
@@ -97,6 +106,7 @@ ${msgz}
 
             <sf:hidden path="complaintNo" value="${ss.complaintNo}"/>
             <td><input type="submit" value="Submit Feedback"/></td>
+            
             </sf:form>
 
     </tr>

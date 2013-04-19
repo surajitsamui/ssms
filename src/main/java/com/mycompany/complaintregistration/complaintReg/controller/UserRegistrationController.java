@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author mmc-pc1
  */
 @Controller
-public class UserRegistrationController extends UsingMap{
+public class UserRegistrationController extends UsingMap {
 
     @Autowired
     UserRegistrationRepo userRepo;
@@ -45,11 +45,16 @@ public class UserRegistrationController extends UsingMap{
 
     @RequestMapping(value = "/userRegistration.htm", method = RequestMethod.POST)
     public String saveUserRegform(@ModelAttribute("userForm") UserRegistration ureg, @RequestParam(value = "userId", defaultValue = "0") Integer userId, Model m, BindingResult err) {
-        new UserRegistrationValidation().validate(err, ureg, (userId == 0));
+        new UserRegistrationValidation().validate(err, ureg);
         if (err.hasErrors()) {
             return "complaint/userRegistration";
         }
-        userRepo.save(ureg, (userId == 0));
+        if (ureg.getUserId() == (userRepo.userCount() + 1)) {
+            userRepo.save(ureg);
+        } else {
+            ureg.setUserId(userRepo.userCount() + 1);
+            userRepo.save(ureg);
+        }
         m.addAttribute("userCountShow", "Your System Generated User Id is " + ureg.getUserId());
         return "complaint/userRegistration";
     }

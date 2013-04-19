@@ -20,7 +20,7 @@ public class UserRegistration {
     private String eMail;
     private String desiredPassWord;
     private String tempPassWord;
-    private int adminUser = 1;
+    private int adminUser = 1; //0 = User, 1 = Programmer, 2= Admin
 
     public int getAdminUser() {
         return adminUser;

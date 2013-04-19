@@ -18,7 +18,7 @@
     <body bgcolor='#E6E6E6'>
         <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"> <div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"><font color="grey">Welcome <u>${homePageS.name}</u> to NLC Administrator Complaint Details View Page</font></h1></div<hr>
 <hr>
-<table  align="center">
+<%--table  align="center">
         <tr><td><font color="grey"><u><b>Your ID:</b></u></font>      ${homePageS.userId}||</td>
 <td><font color="grey"><u><b> Name:</b></u></font>    ${homePageS.initial}${homePageS.name}||</td>
 <td><font color="grey"><u><b> Address : </b></u> </font>  ${homePageS.add}||</td>
@@ -118,8 +118,8 @@
 <tr><td><font color="grey"><u><b>Complaint Date: </b></u></font> ${detail.complaintDate}</td></tr>
 <tr><td><font color="grey"><u><b>Complaint Status: </b></u></font> ${detail.adminStatus}</td></tr>
         <%--tr><td><font color="grey"><u><b>Solved Date: </b></u></font> ${detail.complaintSolved}</td></tr--%>
-        <c:if test="${detail.adminStatus ne 'Solved'}">
-            <sf:form commandName="dd">
+        <c:if test="${detail.adminStatus ne 'S'}">
+            <sf:form commandName="detail">
 <tr><sf:hidden path="complaintNo" value="${detail.complaintNo}"/>
     <td><font color="grey"><u><b>Programmer to Assign: </b></u></font> 
         <sf:select path="adminAsign">

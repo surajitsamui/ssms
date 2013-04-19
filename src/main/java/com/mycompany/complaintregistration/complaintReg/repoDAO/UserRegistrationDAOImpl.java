@@ -45,7 +45,7 @@ public class UserRegistrationDAOImpl implements UserRegistrationRepo {
     // @Transactional(rollbackFor = Exception.class)
 
     @Override
-    public void save(UserRegistration uComp, boolean add) {
+    public void save(UserRegistration uComp) {
 
         try {
             read(uComp.getUserId());
@@ -101,4 +101,11 @@ public class UserRegistrationDAOImpl implements UserRegistrationRepo {
     public int userCount() {
         return jdbcTemp.queryForInt("select count(*) from SSR_USER_REGISTRATION");
     }
+
+    @Override
+    public void updatePassword(UserRegistration uComp) {
+      String sqlUpdateUser = "update  SSR_USER_REGISTRATION set USER_PASS_D=?,USER_PASS_T=? where USER_ID=?";
+      jdbcTemp.update(sqlUpdateUser, uComp.getDesiredPassWord(),uComp.getTempPassWord(),uComp.getUserId());
+    }
+    
 }

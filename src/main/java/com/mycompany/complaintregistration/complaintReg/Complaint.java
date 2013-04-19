@@ -21,13 +21,16 @@ public class Complaint {
     private String adminStatus = "P";////// P - Pending// S - Solved///  R - Return
     private String userFeedback;
     private int adminAsign;
+    //private long pendingDays=((complaintDate.getTime()-complaintSolved.getTime())/(1000 * 60 * 60 * 24));
+    Date programmerAssignDate;
+   // private long PendingDays=(Days/(1000 * 60 * 60 * 24));
 
-    public int getAdminAsign() {
-        return adminAsign;
+    public Date getProgrammerAssignDate() {
+        return programmerAssignDate;
     }
 
-    public void setAdminAsign(int adminAsign) {
-        this.adminAsign = adminAsign;
+    public void setProgrammerAssignDate(Date programmerAssignDate) {
+        this.programmerAssignDate = programmerAssignDate;
     }
 
     /**
@@ -115,14 +118,14 @@ public class Complaint {
     }
 
     /**
-     * @return the status
+     * @return the adminStatus
      */
     public String getAdminStatus() {
         return adminStatus;
     }
 
     /**
-     * @param status the status to set
+     * @param adminStatus the adminStatus to set
      */
     public void setAdminStatus(String adminStatus) {
         this.adminStatus = adminStatus;
@@ -141,4 +144,33 @@ public class Complaint {
     public void setUserFeedback(String userFeedback) {
         this.userFeedback = userFeedback;
     }
+
+    /**
+     * @return the adminAsign
+     */
+    public int getAdminAsign() {
+        return adminAsign;
+    }
+
+    /**
+     * @param adminAsign the adminAsign to set
+     */
+    public void setAdminAsign(int adminAsign) {
+        this.adminAsign = adminAsign;
+    }
+
+    /**
+     * @return the pendingDays
+     */
+   /* public long getPendingDays() {
+        return pendingDays;
+    }
+
+    /**
+     * @param pendingDays the pendingDays to set
+     */
+   /* public void setPendingDays(long pendingDays) {
+        this.pendingDays = pendingDays;
+    }*/
+    
 }

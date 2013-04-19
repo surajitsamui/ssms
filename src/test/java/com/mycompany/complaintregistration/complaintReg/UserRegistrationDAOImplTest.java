@@ -49,14 +49,14 @@ public class UserRegistrationDAOImplTest {
         ureg.setUserId(101);
         ureg.setName("Test");
         ureg.setDesiredPassWord("aaa");
-        uregRepo.save(ureg, true);
+        uregRepo.save(ureg);
         
         UserRegistration uregn = uregRepo.read(101);
         assertEquals(uregn.getName(), ureg.getName());
         
         uregn.setName("change");
         
-        uregRepo.save(uregn, false);
+        uregRepo.save(uregn);
         uregn = uregRepo.read(101);
         assertEquals(uregn.getName(), "change");
         

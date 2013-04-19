@@ -16,7 +16,7 @@ public interface UserRegistrationRepo {
 
     UserRegistration read(int uId);
 
-    void save(UserRegistration uComp, boolean add);
+    void save(UserRegistration uComp);
 
     List<UserRegistration> getUserDetal();
 
@@ -27,4 +27,5 @@ public interface UserRegistrationRepo {
     List<Integer> getProgrammer(int id);
 
     public int userCount();
+    void updatePassword(UserRegistration uComp);
 }

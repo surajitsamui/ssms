@@ -71,6 +71,7 @@
                 <sf:option value="S" label="Solved"/>
                 <sf:option value="R" label="Return"/>
             </sf:select>
+            
     <input type="submit" value="Update"/>
 </td></tr>
 </sf:form>

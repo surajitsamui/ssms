@@ -25,15 +25,18 @@ public abstract class UsingMap {
             home.put("New Complaint", "/userComplaint.htm");
             home.put("Home", "/userHomePage.htm");
             home.put("Status", "/userComplainStatus.htm");
+            home.put("Update Profile", "/profileUpdate.htm");
         }
         if (us.getAdminUser() == 1) {
             home.put("Home", "/programmerHomePage.htm");
-            home.put(("Profile Update"), "/pgmDetails.htm");
+            home.put(("Experience"), "/pgmDetails.htm");
+            home.put("Update Profile", "/profileUpdate.htm");
             home.put("Complaints", "/programmerViewComplain.htm");
         }
         if (us.getAdminUser() == 2) {
-            home.put("Update Profile", "/adminHomePage.htm");
+            home.put("Update Profile", "/profileUpdate.htm");
             home.put("Complaints", "/adminViewCComplainDetails.htm");
+            home.put("New Programmer", "/programmerCreationPagebyAdmin.htm");
         }
         home.put("Log Out", "/index.jsp");
         return home;

@@ -34,4 +34,6 @@ public interface ComplaintRepo {
     List<Complaint> statusSolvedProgToUser(int complaintUserId);
 
     void feedbackUpdate(Complaint com);
+
+    void complaintSolveDate(Complaint com);
 }

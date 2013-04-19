@@ -21,7 +21,7 @@ public class UserRegistrationValidation {
 
     UserRegistrationRepo usrRepo;
 
-    public void validate(Errors err, UserRegistration usr, boolean add) {
+    public void validate(Errors err, UserRegistration usr) {
 
         if (usr.getInitial().equals("")) {
             err.rejectValue("initial", null, "Select Initial");

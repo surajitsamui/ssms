@@ -1,14 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.complaintregistration.complaintReg;
 
 import java.util.Date;
 
 /**
  *
- * @author mmc-pc1
+ * @author Sudipta
  */
 public class AdminComplaint {
 

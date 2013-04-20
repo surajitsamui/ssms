@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
- * @author mmc-pc1
+ * @author Ratul
  */
 @Controller
-public class UserRegistrationController extends UsingMap {
+public class UserRegistrationController  {
 
     @Autowired
     UserRegistrationRepo userRepo;

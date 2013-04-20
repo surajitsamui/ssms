@@ -18,10 +18,15 @@
     </head>
     <body  bgcolor='#E6E6E6'>
         <h1><img src="http://2.bp.blogspot.com/-3W2_broPZDU/UBH122OZhYI/AAAAAAAABPA/kTfjX1isTMk/s1600/NLC-India-Logo.png" width="75" height="50"><font color="grey">Fill Up The Form to Register</font></h1><hr>
+
         <font color="red"><b><i> Welcome to NLC  </i></b></font>
         <table align="center">
             <sf:form commandName="userForm">
+
+
                 <td><sf:hidden path="userId" value="${usrCont}" />
+
+
                 <tr><th>Name :</th>
                     <td> <sf:select path = "initial" >
                             <sf:option value = "" label = ""/>
@@ -29,6 +34,7 @@
                             <sf:option value = "Ms." label = "Ms."/>
                             <sf:option value = "Mrs." label = "Mrs."/>
                         </sf:select>
+
                         <sf:input path="name" />
                         <sf:errors path="initial"/>
                         <sf:errors path="Name"/></td></tr>
@@ -63,5 +69,6 @@
             <h3 align="center">${userCountShow}</h3>
         </table>
         <hr>
+        
     </body>
 </html>

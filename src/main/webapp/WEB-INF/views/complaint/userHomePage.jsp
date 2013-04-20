@@ -22,32 +22,14 @@
     <table align="center" >
         <tbody >
             <%@include file="../common/header.jsp" %>
-            <%--tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
-                    <input type="reset" value="Home" onclick="location = 'userHomePage.htm';"/>
-                </td>
-                <td bgcolor="#FF9E0E" colspan="40" height="20">
-                    <input type="reset" value="New Complaint" onclick="location = 'userComplaint.htm';"/>
-                </td>
-                <td bgcolor="#FF9E0E" colspan="40" height="20">
-                    <input type="reset" value="Status" onclick="location = 'userComplainStatus.htm';"/>
-                </td>
-
-                <td bgcolor="#FF9E0E" colspan="40" height="20">
-                    <input type="reset" value="Log Out" onclick="location = 'index.jsp';"/>
-                </td></tr--%>
         </tbody></table>
     <hr>
-
     <table  align="center">
         <tr><td><font color="grey"><u><b>User ID:</b></u></font>      ${homePageS.userId}</td></tr>
 <tr><td><font color="grey"><u><b>User Name:</b></u></font>    ${homePageS.initial}${homePageS.name}</td></tr>
 <tr><td><font color="grey"><u><b>User Add : </b></u> </font>  ${homePageS.add}</td></tr>
 <tr><td><font color="grey"><u><b>User Mobile: </b></u> </font>${homePageS.mobile}</td></tr>
 <tr><td><font color="grey"><u><b>User E-Mail: </b></u></font> ${homePageS.eMail}</td></tr>
-        <%--tr><td><font color="grey"><u><b>User Cat. : </b></u></font>  ${homePageS.adminUser}</td></tr--%>
-
-
-
 </table><hr>
 </body>
 </html>

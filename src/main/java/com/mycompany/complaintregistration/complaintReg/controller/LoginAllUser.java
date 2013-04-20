@@ -44,8 +44,6 @@ public class LoginAllUser {
                 o.addAttribute("error", "Login Information Invalid");
                 return "complaint/mainLogin";
             }
-            //session.invalidate();
-
             session.setAttribute("user", ur);
             String path = null;
             switch (ur.getAdminUser()) {

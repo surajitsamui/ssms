@@ -21,17 +21,16 @@ public class UserRegistrationValidation {
 
     UserRegistrationRepo usrRepo;
 
-    private boolean  isNumber(String value){
-        
+    private boolean isNumber(String value) {
         for (int i = 0; i < value.length(); i++) {
-         if (value.charAt(i) >= '0' && value.charAt(i) <= '9' ) {
-             
-         }else{
-             return false;
-         }
+            if (value.charAt(i) >= '0' && value.charAt(i) <= '9') {
+            } else {
+                return false;
+            }
         }
         return true;
     }
+
     public void validate(Errors err, UserRegistration usr) {
 
         if (usr.getInitial().equals("")) {
@@ -41,8 +40,8 @@ public class UserRegistrationValidation {
             err.rejectValue("add", null, "Address cannot be blank");
         }
 
-        if (!StringUtils.hasText(usr.getMobile()) && !isNumber(usr.getMobile()) && usr.getMobile().length()<10) {
-                    err.rejectValue("mobile", null, "Enter Valid Phone Number");                
+        if (!StringUtils.hasText(usr.getMobile()) && !isNumber(usr.getMobile()) && usr.getMobile().length() < 10) {
+            err.rejectValue("mobile", null, "Enter Valid Phone Number");
         }
         if (StringUtils.hasText(usr.getName())) {
             for (int i = 0; i < (usr.getName()).length(); i++) {
@@ -50,7 +49,7 @@ public class UserRegistrationValidation {
                     err.rejectValue("Name", null, "Enter Name Correctly");
                 }
             }
-        }else{
+        } else {
             err.rejectValue("Name", null, "Enter Name Correctly");
         }
         if (StringUtils.hasText(usr.geteMail())) {//Email
@@ -74,8 +73,5 @@ public class UserRegistrationValidation {
         if (!usr.getTempPassWord().equals(usr.getDesiredPassWord())) {//confPass
             err.rejectValue("tempPassWord", null, "PassError");
         }
-
-
-
     }
 }

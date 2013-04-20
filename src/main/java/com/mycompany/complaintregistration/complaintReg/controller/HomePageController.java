@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
- * @author mmc-pc1
+ * @author Ratul
  */
 @Controller
-public class HomePageController extends UsingMap{
+public class HomePageController extends UsingMap {
+
     @Autowired
-     ComplaintRepo comRepo;
+    ComplaintRepo comRepo;
     @Autowired
     UserRegistrationRepo ur;
 
@@ -42,15 +43,4 @@ public class HomePageController extends UsingMap{
         m.addAttribute("homePageS", uu);
         return "complaint/programmerHomePage";
     }
-
-   /* @RequestMapping(value = "/adminViewCComplaintViewSolved.htm", method = RequestMethod.GET)
-    public String homePageAdmin(HttpSession session, Model m) {
-        if (session.getAttribute("user") == null) {
-            return "redirect:/mainLogin.htm";
-        }
-        UserRegistration uu = (UserRegistration) session.getAttribute("user");
-        m.addAttribute("homePageS", uu);
-        return "complaint/adminViewCComplaintViewSolved";
-    }*/
-    
 }

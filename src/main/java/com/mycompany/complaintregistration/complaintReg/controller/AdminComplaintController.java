@@ -48,12 +48,12 @@ public class AdminComplaintController extends UsingMap {
         } else {
             com = comRepo.read(cId);
         }
-        //Complaint compl = new Complaint();
+      
         m.addAttribute("pending", comRepo.getAllComplaintPending("P"));
         m.addAttribute("solved", comRepo.getAllComplaintPending("S"));
         m.addAttribute("unsolved", comRepo.getAllComplaintPending("R"));
         m.addAttribute("detail", com);
-        m.addAttribute("prog", ur.getProgrammer(1));// check and remove this
+        m.addAttribute("prog", ur.getProgrammer(1));
         return "complaint/adminViewCComplainDetails";
     }
 
@@ -65,8 +65,6 @@ public class AdminComplaintController extends UsingMap {
         m.addAttribute("mszz", "Updated OK");
         return "complaint/adminViewCComplainDetails";
     }
-
-    
 
     @RequestMapping(value = "/programmerCreationPagebyAdmin.htm", method = RequestMethod.GET)
     public String programmerCreationbyAdmin(Model m) {
@@ -84,12 +82,7 @@ public class AdminComplaintController extends UsingMap {
         if (err.hasErrors()) {
             return "complaint/programmerCreationPagebyAdmin";
         }
-//        if (ureg.getUserId() == (ur.userCount() + 1)) {
-//            ur.save(ureg);
-//        } else {
-            //ureg.setUserId(ur.userCount() + 1);
-            ur.save(ureg);
-  //      }
+        ur.saveInsert(ureg);
         m.addAttribute("userCountShow", "Your System Generated User Id is " + ureg.getUserId());
         return "complaint/programmerCreationPagebyAdmin";
     }

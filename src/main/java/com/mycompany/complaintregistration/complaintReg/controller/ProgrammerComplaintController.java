@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
- * @author Samim
+ * @author Ratul
  */
 @Controller
 public class ProgrammerComplaintController extends UsingMap{
@@ -29,9 +29,6 @@ public class ProgrammerComplaintController extends UsingMap{
         UserRegistration id = (UserRegistration) sess.getAttribute("user");
         Complaint complaint = new Complaint();
         m.addAttribute("complaint", comRepo.getAllComplaintAgainstProgrammer(id.getUserId()));
-        //Complaint comId= comRepo.read(cmId);
-        //n.addAttribute("detail",comId);
-
         return "complaint/programmerViewComplain";
     }
 
@@ -47,14 +44,12 @@ public class ProgrammerComplaintController extends UsingMap{
         UserRegistration id = (UserRegistration) sess.getAttribute("user");
         Complaint complaint = new Complaint();
         m.addAttribute("complaint", comRepo.getAllComplaintAgainstProgrammer(id.getUserId()));
-        Complaint comm = new Complaint();
-        k.addAttribute("setval", comm);
+        k.addAttribute("setval", complaint);
         return "complaint/programmerViewComplainDetail";
     }
 
     @RequestMapping(value = "/programmerViewComplainDetail.htm", method = RequestMethod.POST)
     public String setStatus(@ModelAttribute("setval") Complaint co, Model l) {
-
         co.setComplaintSolved(new Date());
         comRepo.statusUpdate(co);
         l.addAttribute("msz", "Updated");

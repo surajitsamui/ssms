@@ -25,13 +25,10 @@ public interface ComplaintRepo {
 
     List<Complaint> getAllComplaintPending(String type);
 
-
-
     List<Complaint> statusPendingUnsolvedProgToUser(int complaintUserId);
 
     List<Complaint> statusSolvedProgToUser(int complaintUserId);
 
     void feedbackUpdate(Complaint com);
-
-    void complaintSolveDate(Complaint com);
+   
 }

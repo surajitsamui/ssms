@@ -6,7 +6,7 @@ import java.util.Date;
  *
  * @author mmc-pc1
  */
-public class Complaint extends UserRegistration{
+public class Complaint extends UserRegistration {
 
     private int complaintNo;
     private String complaintDesc;
@@ -17,9 +17,7 @@ public class Complaint extends UserRegistration{
     private String adminStatus = "P";////// P - Pending// S - Solved///  R - Return
     private String userFeedback;
     private int adminAsign;
-    //private long pendingDays=((complaintDate.getTime()-complaintSolved.getTime())/(1000 * 60 * 60 * 24));
     Date programmerAssignDate;
-   // private long PendingDays=(Days/(1000 * 60 * 60 * 24));
 
     public Date getProgrammerAssignDate() {
         return programmerAssignDate;
@@ -154,19 +152,4 @@ public class Complaint extends UserRegistration{
     public void setAdminAsign(int adminAsign) {
         this.adminAsign = adminAsign;
     }
-
-    /**
-     * @return the pendingDays
-     */
-   /* public long getPendingDays() {
-        return pendingDays;
-    }
-
-    /**
-     * @param pendingDays the pendingDays to set
-     */
-   /* public void setPendingDays(long pendingDays) {
-        this.pendingDays = pendingDays;
-    }*/
-    
 }

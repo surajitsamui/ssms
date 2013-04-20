@@ -7,8 +7,8 @@
 <hr--%>
 
 <br>
-<p>
+<p align="center">
     <c:forEach items="${menu}" var="map">
-        <input type="button" value="${map.key}" onclick="location = '${map.value}';" style="padding: 5px"/>
+        <input type="button" value="${map.key}" onclick="location = '${map.value}';" style="padding: 7px; border:1px solid #EE872A"/>
     </c:forEach>
 </p>

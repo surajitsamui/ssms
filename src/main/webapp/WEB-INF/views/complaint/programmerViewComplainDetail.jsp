@@ -11,7 +11,6 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="st" %>
 
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -24,28 +23,13 @@
     <table align="center" >
         <tbody >
             <%@include file="../common/header.jsp" %>
-            <%--tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
-                    <input type="reset" value="Home" onclick="location = 'programmerHomePage.htm';"/>
-                </td>
-                <td bgcolor="#FF9E0E" colspan="40" height="20">
-                    <input type="reset" value="Complaint" onclick="location = 'programmerViewComplain.htm';"/>
-                </td>
-
-
-                <td bgcolor="#FF9E0E" colspan="40" height="20">
-                    <input type="reset" value="Log Out" onclick="location = 'index.jsp';"/>
-                </td></tr--%>
         </tbody></table>
     <hr>
-
     <table  align="center">
-
         <c:forEach items="${complaint}" var="pcoml">
-
             <tr><td><font color="grey"><u><b>Complaint No : </b></u> </font>
             <a href="/programmerViewComplainDetail.htm?cmId=${pcoml.complaintNo}">${pcoml.complaintNo}</a></td></tr>
-
-</c:forEach>
+        </c:forEach>
 </table><hr>
 <table align="center">
     <tr><td><font color="grey"><u><b>Complaint No : </b></u> </font>  ${detail.complaintNo}</td></tr>
@@ -63,7 +47,6 @@
     <tr><td><font color="grey"><u><b>Complaint Status: </b></u></font> Returned To Administrator</td></tr>
         </c:if> 
 
-
 <sf:form commandName="setval">
     <tr><sf:hidden path="complaintNo" value="${detail.complaintNo}"/>
         <td>   <font color="grey"><u><b> Status: </b></u>
@@ -71,7 +54,6 @@
                 <sf:option value="S" label="Solved"/>
                 <sf:option value="R" label="Return"/>
             </sf:select>
-            
     <input type="submit" value="Update"/>
 </td></tr>
 </sf:form>

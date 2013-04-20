@@ -16,18 +16,14 @@
         <title>Detail User Information</title>
     </head>
     <body  bgcolor='#E6E6E6'>
-         <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"><div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"> <font color="grey">Welcome <u>${homePageS.name}</u> to NLC Programmer Complaint Detail Page</font></div></h1><hr>
-        <%@include file="../common/header.jsp" %>
+        <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"><div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"> <font color="grey">Welcome <u>${homePageS.name}</u> to NLC Programmer Complaint Detail Page</font></div></h1><hr>
+                <%@include file="../common/header.jsp" %>
         <h1><font color="grey">Fill Up The Form to Register a Programmer</font></h1><hr>
 
         <font color="red"><b><i> Welcome to NLC  </i></b></font>
         <table align="center">
             <sf:form commandName="userForm">
-
-
                 <td><sf:hidden path="userId" value="${usrCont}" />
-
-
                 <tr><th>Name :</th>
                     <td> <sf:select path = "initial" >
                             <sf:option value = "" label = ""/>
@@ -61,34 +57,13 @@
 
                 <tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
                         <input type="submit" value="Save"/></td>
-                    
+
                     <td bgcolor="#FF9E0E" colspan="40" height="20" >
                         <input type="reset" value="Clear" onclick="location = 'programmerCreationPagebyAdmin.htm';"/></td></tr>
 
             </sf:form>
-           ${userCountShow}
+            ${userCountShow}
         </table>
         <hr>
-        <%--table>
-            <hr>
-            <tr>
-                <th>User ID </th>
-                <th>User Name</th>
-                <th>User_Name</th>
-                <th>Password</th>
-                <th>Address</th>
-                <th>Age</th>
-                <th>Sex</th>
-                <th>Mobile No</th>
-                <th>E-Mail</th>
-
-            </tr>
-            <c:forEach items="${userList}" var="userEach">
-                <tbody>   
-                <td> <a href="/userRegistration.htm?userId=${userEach.userId}">${userEach.userId}</a></td>
-
-            </tbody>
-        </c:forEach>
-    </table--%>
     </body>
 </html>

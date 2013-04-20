@@ -26,74 +26,59 @@
         </tbody></table>
     <hr><br>
     <table  align="left"  cellpadding="1" style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
-
         <tbody>
-
-            <%--div style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;"--%>
             <tr>
                 <td> <b> PENDING COMPLAINTS</b></td></tr>
             <tr>  <td>  <font color="grey"><u><b>Complained By</b></u></font></td>
-
-    <td> <font color="grey"><u><b>Complaint No</b></u></font>  </td> 
-<td>  <font color="grey"><u><b>Assigned To</b></u></font></td>
-</tr>
-
-<c:forEach items="${pending}" var="ff">
-    <tr>  <td>  ${ff.name}</td>
+    <td> <font color="grey"><u><b>Complaint No</b></u></font>  </td>
+            <td>  <font color="grey"><u><b>Assigned To</b></u></font></td>
+            </tr>
+      <c:forEach items="${pending}" var="ff">
+    <tr>  
+        <td>  ${ff.name}</td>
         <td>  <a href="/adminViewCComplainDetails.htm?cId=${ff.complaintNo}">${ff.complaintNo}</a><br></td>
         <td>  ${ff.adminAsign}</td></tr>
+      </c:forEach>
+       </tbody>       
+    </table>
+    <table  align="right"  cellpadding="1" style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
+    <tbody>
+    <tr>
+        <td>  <b> SOLVED COMPLAINTS</b></td>
+    </tr>
+    <tr>
+        <td>  <font color="grey"><u><b>Complained By</b></u></font></td>
+    <td> <font color="grey"><u><b>Complaint No</b></u></font>  </td> 
+    </tr>
+    <c:forEach items="${solved}" var="ff">
+    <tr>  <td>  ${ff.name}</td>
+        <td>  <a href="/adminViewCComplainDetails.htm?cId=${ff.complaintNo}">${ff.complaintNo}</a><br></td></tr>
     </c:forEach>
-</tbody>       
-</table>
-<table  align="right"  cellpadding="1" style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
+    </tbody>       
+     </table>
+  <table  align="center"  cellpadding="1" style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
     <tbody>
-
-        
-        <tr>
-            <td>  <b> SOLVED COMPLAINTS</b></td></tr>
-        <tr>
-
-            <td>  <font color="grey"><u><b>Complained By</b></u></font></td>
-<td> <font color="grey"><u><b>Complaint No</b></u></font>  </td> 
-</tr>
-
-<c:forEach items="${solved}" var="ff">
-    <tr>  <td>  ${ff.name}</td>
-        <td>  <a href="/adminViewCComplainDetails.htm?cId=${ff.complaintNo}">${ff.complaintNo}</a><br></td></tr>
-        </c:forEach>
-</tbody>       
-</table>
-
-<%--/div><div style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">shkdgfjdsf</div--%>
-
-
-<table  align="center"  cellpadding="1" style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
-    <tbody>
-
-        <%--div style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;"--%>
-        <tr>
-            <td>  <b> UNSOLVED COMPLAINTS</b></td></tr>
+      <tr>
+            <td>  <b> UNSOLVED COMPLAINTS</b></td>
+      </tr>
         <tr>
             <td>  <font color="grey"><u><b>Complained By</b></u></font></td>
 <td> <font color="grey"><u><b>Complaint No</b></u></font>  </td> 
-</tr>
-
-<c:forEach items="${unsolved}" var="ff">
+        </tr>
+     <c:forEach items="${unsolved}" var="ff">
     <tr>  <td>  ${ff.name}</td>
         <td>  <a href="/adminViewCComplainDetails.htm?cId=${ff.complaintNo}">${ff.complaintNo}</a><br></td></tr>
-        </c:forEach>
+     </c:forEach>
 </tbody>       
 </table ><hr>
 <table  align="center"  style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
-
-
-    <tr><td><font color="grey"><u><b>Complaint No : </b></u> </font>  ${detail.complaintNo}</td></tr>
+<tr><td><font color="grey"><u><b>Complaint No : </b></u> </font>  ${detail.complaintNo}</td></tr>
 <tr><td><font color="grey"><u><b>Complaint Type : </b></u> </font>  ${detail.complaintType}</td></tr>
 <tr><td><font color="grey"><u><b>Complaint Description: </b></u> </font>${detail.complaintDesc}</td></tr>
 <tr><td><font color="grey"><u><b>Complaint Date: </b></u></font> ${detail.complaintDate}</td></tr>
 <tr><td><font color="grey"><u><b>Complaint Status: </b></u></font> ${detail.adminStatus}</td></tr>
-        <%--tr><td><font color="grey"><u><b>Solved Date: </b></u></font> ${detail.complaintSolved}</td></tr--%>
-        <c:if test="${detail.adminStatus ne 'S'}">
+
+            <c:if test="${detail.adminStatus ne 'S'}">
             <sf:form commandName="detail">
 <tr><sf:hidden path="complaintNo" value="${detail.complaintNo}"/>
     <td><font color="grey"><u><b>Programmer to Assign: </b></u></font> 
@@ -108,10 +93,8 @@
 </c:if>
 ${mszz}
 </table>
-
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <font color="red" ><h3 align="right">~SSR</h3></font>
-
 </body>
 </html>
 

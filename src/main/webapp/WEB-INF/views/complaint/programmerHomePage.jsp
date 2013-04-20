@@ -24,33 +24,14 @@
     <table align="center" >
         <tbody >
             <%@include file="../common/header.jsp" %>
-            <%--tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
-                    <input type="reset" value="Home" onclick="location = 'programmerHomePage.htm';"/>
-                </td>
-                <td bgcolor="#FF9E0E" colspan="40" height="20">
-                    <input type="reset" value="Profile Update" onclick="location = 'pgmDetails.htm';"/>
-                </td>
-                <td bgcolor="#FF9E0E" colspan="40" height="20">
-                    <input type="reset" value="Complaints" onclick="location = 'programmerViewComplain.htm';"/>
-                </td>
-
-
-                <td bgcolor="#FF9E0E" colspan="40" height="20">
-                    <input type="reset" value="Log Out" onclick="location = 'index.jsp';"/>
-                </td></tr--%>
-        </tbody></table>
+                   </tbody></table>
     <hr>
-
     <table  align="center">
         <tr><td><font color="grey"><u><b>Programmer ID:</b></u></font>      ${homePageS.userId}</td></tr>
 <tr><td><font color="grey"><u><b>Programmer Name:</b></u></font>    ${homePageS.initial}${homePageS.name}</td></tr>
 <tr><td><font color="grey"><u><b>Programmer Add : </b></u> </font>  ${homePageS.add}</td></tr>
 <tr><td><font color="grey"><u><b>Programmer Mobile: </b></u> </font>${homePageS.mobile}</td></tr>
 <tr><td><font color="grey"><u><b>Programmer E-Mail: </b></u></font> ${homePageS.eMail}</td></tr>
-        <%--tr><td><font color="grey"><u><b>User Cat. : </b></u></font>  ${homePageS.adminUser}</td></tr--%>
-
-
-
 </table><hr>
 </body>
 </html>

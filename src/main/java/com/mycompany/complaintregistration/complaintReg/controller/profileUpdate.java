@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  *
- * @author mmc-pc1
+ * @author Ratul
  */
 @Controller
 public class profileUpdate extends UsingMap {
@@ -34,26 +34,19 @@ public class profileUpdate extends UsingMap {
         UserRegistration uu = (UserRegistration) session.getAttribute("user");
         m.addAttribute("homePageS", uu);
         UserRegistration us = new UserRegistration();
-        // int userCount = ur.userCount() + 1;
-        // m.addAttribute("usrCont", userCount);
         m.addAttribute("userForm", us);
-        //m.addAttribute("log",uu);
         return "complaint/profileUpdate";
     }
 
     @RequestMapping(value = "/profileUpdate.htm", method = RequestMethod.POST)
     public String adminProfileUpdatepost(@ModelAttribute("userForm") UserRegistration ureg, Model m, BindingResult err, HttpSession session) {
-        //UserRegistration uu = (UserRegistration) sAdmin.getAttribute("user");
-
         new UserRegistrationValidation().validate(err, ureg);
         if (err.hasErrors()) {
             return "complaint/profileUpdate";
         }
-        ur.save(ureg);
+        ur.saveUpdate(ureg);
         m.addAttribute("uupdatationComplete", "Your Profile Is Updated");
         session.setAttribute("user", ureg);
-        //adminProfileUpdateGet(sAdmin, m);
-        //sAdmin.invalidate();
         return "complaint/profileUpdate";
     }
 
@@ -65,17 +58,15 @@ public class profileUpdate extends UsingMap {
     }
 
     @RequestMapping(value = "/changePassword.htm", method = RequestMethod.POST)
-    public String changePasswordSet(@ModelAttribute("pass") UserRegistration u, Model m,HttpSession session) {
-        UserRegistration us= (UserRegistration)session.getAttribute("user");
-        if (!u.getTempPassWord().equals(ur.checkPass(us.getUserId())) || u.getDesiredPassWord().length()!=10) {
-            
-             m.addAttribute("notUpdate", "Type Correct Password");
+    public String changePasswordSet(@ModelAttribute("pass") UserRegistration u, Model m, HttpSession session) {
+        UserRegistration us = (UserRegistration) session.getAttribute("user");
+        if (!u.getTempPassWord().equals(ur.checkPass(us.getUserId())) || u.getDesiredPassWord().length() != 10) {
+            m.addAttribute("notUpdate", "Type Correct Password");
             return "complaint/changePassword";
         } else {
             ur.updatePassword(u, us.getUserId());
             m.addAttribute("Update", "Password Changed Succesfully");
             return "complaint/changePassword";
-           
         }
     }
 }

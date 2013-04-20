@@ -16,17 +16,19 @@ public interface UserRegistrationRepo {
 
     UserRegistration read(int uId);
 
-    void save(UserRegistration uComp);
+    void saveInsert(UserRegistration uComp);
+
+    void saveUpdate(UserRegistration uComp);
 
     List<UserRegistration> getUserDetal();
-
-    int login(UserRegistration uuu, int uId, String pass, int cat);
 
     int logCheck(int uId);
 
     List<Integer> getProgrammer(int id);
 
     public int userCount();
+
     void updatePassword(UserRegistration uComp, int id);
+
     String checkPass(int id);
 }

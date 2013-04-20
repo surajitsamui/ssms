@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author Sintu Pal
  */
 @Controller
-public class pgmController extends UsingMap{
+public class pgmController extends UsingMap {
 
     @Autowired
     pgmRepo repo;
@@ -37,18 +37,12 @@ public class pgmController extends UsingMap{
         }
         m.addAttribute("userProgrLink", u);
         m.addAttribute("pgm", details);
-        //  m.addAttribute("all", repo.read(name));
-        //m.addAttribute("list", repo.getAllDetails());
         return "complaint/pgmDetails";
     }
 
     @RequestMapping(value = "/pgmDetails.htm", method = RequestMethod.POST)
-    public String submitForm(@ModelAttribute("pgm") ProgrammerAnalystDetail details, @RequestParam(value = "name", required = false) String name, Model m, BindingResult err) {
-
-        /*   new ValidatePgm(repo).valid(err, details, (name == null));
-         if (err.hasErrors()) {
-         return "complaint/pgmDetails";
-         }*/
+    public String submitForm(@ModelAttribute("pgm") ProgrammerAnalystDetail details,
+            @RequestParam(value = "name", required = false) String name, Model m, BindingResult err) {
         repo.save(details, (name == null));
         return "redirect:/pgmDetails.htm";
     }

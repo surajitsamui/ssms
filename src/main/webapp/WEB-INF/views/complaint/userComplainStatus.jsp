@@ -16,7 +16,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Complaint status Page</title>
     </head>
-    <body bgcolor='#E6E6E6'>
+    <body  bgcolor='#E6E6E6'>
         <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"> <div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"><font color="grey">Welcome <u>${homePageS.name}</u> to NLC User Home Page</font></div></h1><hr>
 
     <br>
@@ -52,7 +52,7 @@
     <tr> <td>  <font color="grey"><u><b> No</b></u></font> </td>
 <td>  <font color="grey"><u><b> Description</b></u></font> </td>
 <td>  <font color="grey"><u><b>Type</b></u></font> </td>
-            <td>  <font color="grey"><u><b>Pending Days</b></u></font> </td></tr>
+            
 
 
 <c:forEach items="${statusPendingUnsolved}" var="ss">

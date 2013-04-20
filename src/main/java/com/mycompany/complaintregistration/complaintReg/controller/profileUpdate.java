@@ -22,12 +22,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author mmc-pc1
  */
 @Controller
-public class profileUpdate extends UsingMap{
-     @Autowired
+public class profileUpdate extends UsingMap {
+
+    @Autowired
     ComplaintRepo comRepo;
     @Autowired
     UserRegistrationRepo ur;
-   @RequestMapping(value = "/profileUpdate.htm", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/profileUpdate.htm", method = RequestMethod.GET)
     public String adminProfileUpdateGet(HttpSession session, Model m) {
         UserRegistration uu = (UserRegistration) session.getAttribute("user");
         m.addAttribute("homePageS", uu);
@@ -40,7 +42,7 @@ public class profileUpdate extends UsingMap{
     }
 
     @RequestMapping(value = "/profileUpdate.htm", method = RequestMethod.POST)
-    public String adminProfileUpdatepost(@ModelAttribute("userForm") UserRegistration ureg, Model m, BindingResult err,HttpSession session) {
+    public String adminProfileUpdatepost(@ModelAttribute("userForm") UserRegistration ureg, Model m, BindingResult err, HttpSession session) {
         //UserRegistration uu = (UserRegistration) sAdmin.getAttribute("user");
 
         new UserRegistrationValidation().validate(err, ureg);
@@ -53,16 +55,27 @@ public class profileUpdate extends UsingMap{
         //adminProfileUpdateGet(sAdmin, m);
         //sAdmin.invalidate();
         return "complaint/profileUpdate";
-    } 
-    @RequestMapping (value = "/changePassword.htm",method = RequestMethod.GET)
-    public String changePasswordGet(Model m, HttpSession ses){
-        UserRegistration uss= (UserRegistration) ses.getAttribute("user");
-        m.addAttribute("pass",uss);
+    }
+
+    @RequestMapping(value = "/changePassword.htm", method = RequestMethod.GET)
+    public String changePasswordGet(Model m, HttpSession ses) {
+        UserRegistration uss = (UserRegistration) ses.getAttribute("user");
+        m.addAttribute("pass", uss);
         return "complaint/changePassword";
     }
-    @RequestMapping(value = "/changePassword.htm",method = RequestMethod.POST)
-    public String changePasswordSet(@ModelAttribute ("pass") UserRegistration u){
-        ur.updatePassword(u);
-        return "redirect:/changePassword.htm";
+
+    @RequestMapping(value = "/changePassword.htm", method = RequestMethod.POST)
+    public String changePasswordSet(@ModelAttribute("pass") UserRegistration u, Model m,HttpSession session) {
+        UserRegistration us= (UserRegistration)session.getAttribute("user");
+        if (!u.getTempPassWord().equals(ur.checkPass(us.getUserId())) || u.getDesiredPassWord().length()!=10) {
+            
+             m.addAttribute("notUpdate", "Type Correct Password");
+            return "complaint/changePassword";
+        } else {
+            ur.updatePassword(u, us.getUserId());
+            m.addAttribute("Update", "Password Changed Succesfully");
+            return "complaint/changePassword";
+           
+        }
     }
 }

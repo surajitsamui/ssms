@@ -15,41 +15,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home Page</title>
     </head>
-    <body bgcolor='#E6E6E6'>
+    <body  bgcolor='#E6E6E6'>
         <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"> <div style="font-family:verdana;padding:20px;border-radius:10px;border:10px solid #EE872A;"><font color="grey">Welcome <u>${homePageS.name}</u> to NLC Administrator Complaint Details View Page</font></h1></div<hr>
-<hr>
-<%--table  align="center">
-        <tr><td><font color="grey"><u><b>Your ID:</b></u></font>      ${homePageS.userId}||</td>
-<td><font color="grey"><u><b> Name:</b></u></font>    ${homePageS.initial}${homePageS.name}||</td>
-<td><font color="grey"><u><b> Address : </b></u> </font>  ${homePageS.add}||</td>
-<td><font color="grey"><u><b> Mobile No.: </b></u> </font>${homePageS.mobile}||</td>
-<td><font color="grey"><u><b> E-Mail: </b></u></font><a href="${homePageS.eMail}?=${homePageS.eMail}">${homePageS.eMail}</a> </td></tr>
-        <%--tr><td><font color="grey"><u><b>User Cat. : </b></u></font>  ${homePageS.adminUser}</td></tr--%>
+    <hr>
 
-
-
-</table>
     <br><hr>
     <table align="center" >
         <tbody>
             <%@include file="../common/header.jsp" %> 
-                   
-                
-            <%--tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
-                    <input type="reset" value="Home" onclick="location = 'adminHomePage.htm';"/>
-                </td>
-                <td bgcolor="#FF9E0E" colspan="40" height="20">
-                    <input type="reset" value="Complaints" onclick="location = 'adminViewCComplainDetails.htm';"/>
-                </td>
-
-
-                <td bgcolor="#FF9E0E" colspan="40" height="20">
-                    <input type="reset" value="Log Out" onclick="location = 'index.jsp';"/>
-                </td></tr--%>
         </tbody></table>
     <hr><br>
-
-
     <table  align="left"  cellpadding="1" style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
 
         <tbody>
@@ -64,7 +39,7 @@
 </tr>
 
 <c:forEach items="${pending}" var="ff">
-    <tr>  <td>  ${ff.complaintUserId}</td>
+    <tr>  <td>  ${ff.name}</td>
         <td>  <a href="/adminViewCComplainDetails.htm?cId=${ff.complaintNo}">${ff.complaintNo}</a><br></td>
         <td>  ${ff.adminAsign}</td></tr>
     </c:forEach>
@@ -73,7 +48,7 @@
 <table  align="right"  cellpadding="1" style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;">
     <tbody>
 
-        <%--div style="font-family:verdana;padding:20px;border-radius:10px;border:1px solid #EE872A;"--%>
+        
         <tr>
             <td>  <b> SOLVED COMPLAINTS</b></td></tr>
         <tr>
@@ -83,7 +58,7 @@
 </tr>
 
 <c:forEach items="${solved}" var="ff">
-    <tr>  <td>  ${ff.complaintUserId}</td>
+    <tr>  <td>  ${ff.name}</td>
         <td>  <a href="/adminViewCComplainDetails.htm?cId=${ff.complaintNo}">${ff.complaintNo}</a><br></td></tr>
         </c:forEach>
 </tbody>       
@@ -104,7 +79,7 @@
 </tr>
 
 <c:forEach items="${unsolved}" var="ff">
-    <tr>  <td>  ${ff.complaintUserId}</td>
+    <tr>  <td>  ${ff.name}</td>
         <td>  <a href="/adminViewCComplainDetails.htm?cId=${ff.complaintNo}">${ff.complaintNo}</a><br></td></tr>
         </c:forEach>
 </tbody>       

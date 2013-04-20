@@ -6,7 +6,7 @@ import java.util.Date;
  *
  * @author mmc-pc1
  */
-public class Complaint {
+public class Complaint extends UserRegistration{
 
     private int complaintNo;
     private String complaintDesc;

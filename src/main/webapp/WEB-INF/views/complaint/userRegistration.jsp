@@ -16,7 +16,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Detail User Information</title>
     </head>
-    <body bgcolor='#E6E6E6'>
+    <body  bgcolor='#E6E6E6'>
         <h1><img src="http://2.bp.blogspot.com/-3W2_broPZDU/UBH122OZhYI/AAAAAAAABPA/kTfjX1isTMk/s1600/NLC-India-Logo.png" width="75" height="50"><font color="grey">Fill Up The Form to Register</font></h1><hr>
 
         <font color="red"><b><i> Welcome to NLC  </i></b></font>

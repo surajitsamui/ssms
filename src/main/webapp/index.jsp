@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Neyveli || Online Complaining</title>
     </head>
-    <body bgcolor="#E6E6E6">
+   <body  bgcolor='#E6E6E6'>
         <%--div style="opacity:0.5;position:absolute;left:50px;width:300px;height:150px;background-color:#40B3DD"></div--%>
         
         

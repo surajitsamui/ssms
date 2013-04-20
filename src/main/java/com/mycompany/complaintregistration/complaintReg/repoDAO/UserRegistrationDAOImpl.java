@@ -103,9 +103,22 @@ public class UserRegistrationDAOImpl implements UserRegistrationRepo {
     }
 
     @Override
-    public void updatePassword(UserRegistration uComp) {
-      String sqlUpdateUser = "update  SSR_USER_REGISTRATION set USER_PASS_D=?,USER_PASS_T=? where USER_ID=?";
-      jdbcTemp.update(sqlUpdateUser, uComp.getDesiredPassWord(),uComp.getTempPassWord(),uComp.getUserId());
+    public void updatePassword(UserRegistration uComp, int id) {
+      String sqlUpdateUser = "update SSR_USER_REGISTRATION set USER_PASS_D=?,USER_PASS_T=? where USER_ID=?";
+      jdbcTemp.update(sqlUpdateUser, uComp.getDesiredPassWord(),uComp.getDesiredPassWord(),id);
+    }
+
+    @Override
+    public String checkPass(int id) {
+        return jdbcTemp.queryForObject("select USER_PASS_T from SSR_USER_REGISTRATION where USER_ID=?",new RowMapper<String>() {
+
+            @Override
+            public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+                String sc= new String();
+                sc=rs.getString("USER_PASS_T");
+                return sc;
+            }
+        },id);
     }
     
 }

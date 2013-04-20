@@ -37,9 +37,33 @@ public class ComplaintDAOImpl implements ComplaintRepo {
             complaint.setAdminStatus(rs.getString("ADMIN_STATUS"));
             complaint.setUserFeedback(rs.getString("USER_FEEDBACK"));
             complaint.setAdminAsign(rs.getInt("ADMIN_ASSIGN"));
+          //  complaint.setName(rs.getString("USER_NAME"));
+          
             return complaint;
         }
     }
+    
+     class readComplaintRow1 implements RowMapper<Complaint> {
+
+        @Override
+        public Complaint mapRow(ResultSet rs, int rowNum) throws SQLException {
+            Complaint complaint = new Complaint();
+            complaint.setComplaintNo(rs.getInt("COMPL_NO"));
+            complaint.setComplaintDesc(rs.getString("COMPL_DESC"));
+            complaint.setComplaintUserId(rs.getInt("COMPL_USERID"));
+            complaint.setComplaintType(rs.getString("COMPL_TYPE"));
+            complaint.setComplaintDate(rs.getDate("COMPL_DATE"));
+            complaint.setProgrammerAssignDate(rs.getDate("assign_prog_dt"));
+            complaint.setComplaintSolved(rs.getDate("COMPL_SOLVED"));
+            complaint.setAdminStatus(rs.getString("ADMIN_STATUS"));
+            complaint.setUserFeedback(rs.getString("USER_FEEDBACK"));
+            complaint.setAdminAsign(rs.getInt("ADMIN_ASSIGN"));
+            complaint.setName(rs.getString("USER_NAME"));
+          
+            return complaint;
+        }
+    }
+    
 
     @Override
     public Complaint read(int complaintNo) {
@@ -88,22 +112,26 @@ public class ComplaintDAOImpl implements ComplaintRepo {
 
     @Override
     public List<Complaint> getAllComplaintPending() {
-        String sqlstmt = "Select COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,assign_prog_dt,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK,ADMIN_ASSIGN from SSR_COMPLAINT where ADMIN_STATUS=? order by COMPL_NO desc ";
-        return jdbct.query(sqlstmt, new readComplaintRow(), "P");
+     String sqlstmt = "Select USER_NAME,COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,assign_prog_dt,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK,ADMIN_ASSIGN from SSR_COMPLAINT a, SSR_USER_REGISTRATION b where ADMIN_STATUS=? and b.USER_ID=a.COMPL_USERID  order by COMPL_NO desc ";
+     //String sqlstmt = "select USER_NAME, COMPL_USERID from SSR_USER_REGISTRATION a, ssr_complaint b where a.USER_ID= b.COMPL_USERID group by a.USER_NAME, b.COMPL_USERID";
+        return jdbct.query(sqlstmt, new readComplaintRow1(), "P");
     }
 //Admin View
 
     @Override
     public List<Complaint> getAllComplaintSolved() {
-        String sqlstmt = "Select COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,assign_prog_dt,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK,ADMIN_ASSIGN from SSR_COMPLAINT where ADMIN_STATUS=? order by COMPL_NO desc ";
-        return jdbct.query(sqlstmt, new readComplaintRow(), "S");
+      
+        String sqlstmt = "Select USER_NAME,COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,assign_prog_dt,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK,ADMIN_ASSIGN from SSR_COMPLAINT a, SSR_USER_REGISTRATION b where ADMIN_STATUS=? and b.USER_ID=a.COMPL_USERID  order by COMPL_NO desc ";
+
+        // String sqlstmt = "Select COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,assign_prog_dt,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK,ADMIN_ASSIGN from SSR_COMPLAINT where ADMIN_STATUS=? order by COMPL_NO desc ";
+        return jdbct.query(sqlstmt, new readComplaintRow1(), "S");
     }
 //Admin View
 
     @Override
     public List<Complaint> getAllComplaintUnSolved() {
-        String sqlstmt = "Select COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,assign_prog_dt,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK,ADMIN_ASSIGN from SSR_COMPLAINT where ADMIN_STATUS=? order by COMPL_NO desc ";
-        return jdbct.query(sqlstmt, new readComplaintRow(), "R");
+        String sqlstmt = "Select USER_NAME,COMPL_NO,COMPL_DESC,COMPL_USERID,COMPL_TYPE,COMPL_DATE,assign_prog_dt,COMPL_SOLVED,ADMIN_STATUS,USER_FEEDBACK,ADMIN_ASSIGN from SSR_COMPLAINT a, SSR_USER_REGISTRATION b where ADMIN_STATUS=? and b.USER_ID=a.COMPL_USERID  order by COMPL_NO desc";
+        return jdbct.query(sqlstmt, new readComplaintRow1(), "R");
     }
 //User Status
 

@@ -27,5 +27,6 @@ public interface UserRegistrationRepo {
     List<Integer> getProgrammer(int id);
 
     public int userCount();
-    void updatePassword(UserRegistration uComp);
+    void updatePassword(UserRegistration uComp, int id);
+    String checkPass(int id);
 }

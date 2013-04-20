@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Complaint Page</title>
     </head>
-    <body bgcolor='#E6E6E6'>
+    <body  bgcolor='#E6E6E6'>
         <h1 align="center"><img src="http://www.nlcindia.com/images/nlc_logo3.jpg" width="75" height="70"> <font color="grey">Welcome <u>${userId.name}</u> to NLC User Home Page</font></h1><hr>
 
         <br>

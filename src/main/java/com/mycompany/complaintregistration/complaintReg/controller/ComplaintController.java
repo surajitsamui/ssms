@@ -27,9 +27,9 @@ public class ComplaintController extends UsingMap {
     public String getUserComplaint(Model m, HttpSession session) {
         UserRegistration ssC = (UserRegistration) session.getAttribute("user");
         Complaint compl = new Complaint();
-        int complno = complrepo.complaintCount() + 1;
+        compl.setComplaintNo( complrepo.complaintCount() + 1);
         m.addAttribute("userId", ssC);
-        m.addAttribute("complno", complno);
+
         m.addAttribute("usercompl", compl);
         return "complaint/userComplaint";
 

@@ -23,11 +23,9 @@ public interface ComplaintRepo {
 
     public List<Complaint> getAllComplaintAgainstProgrammer(int pId);
 
-    List<Complaint> getAllComplaintPending();
+    List<Complaint> getAllComplaintPending(String type);
 
-    List<Complaint> getAllComplaintSolved();
 
-    List<Complaint> getAllComplaintUnSolved();
 
     List<Complaint> statusPendingUnsolvedProgToUser(int complaintUserId);
 

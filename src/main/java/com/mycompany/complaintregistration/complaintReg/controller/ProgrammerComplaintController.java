@@ -54,8 +54,8 @@ public class ProgrammerComplaintController extends UsingMap{
 
     @RequestMapping(value = "/programmerViewComplainDetail.htm", method = RequestMethod.POST)
     public String setStatus(@ModelAttribute("setval") Complaint co, Model l) {
-        Date dd= new Date();
-        co.setComplaintSolved(dd);
+
+        co.setComplaintSolved(new Date());
         comRepo.statusUpdate(co);
         l.addAttribute("msz", "Updated");
         return "complaint/programmerViewComplain";

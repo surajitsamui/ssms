@@ -7,12 +7,8 @@
 <hr--%>
 
 <br>
-<table align="center" >
-    <tbody >
-        <tr><td bgcolor="#FF9E0E" colspan="40" height="20" >
-                   <c:forEach items="${menu}" var="map">
-                <input type="button" value="${map.key}" onclick="location ='${map.value}';"/>
-                        </c:forEach></td></tr>
-            </td></tr>
-    </tbody>
-</table>
+<p>
+    <c:forEach items="${menu}" var="map">
+        <input type="button" value="${map.key}" onclick="location = '${map.value}';" style="padding: 5px"/>
+    </c:forEach>
+</p>

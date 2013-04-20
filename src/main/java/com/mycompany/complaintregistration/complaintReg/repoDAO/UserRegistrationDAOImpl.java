@@ -54,6 +54,7 @@ public class UserRegistrationDAOImpl implements UserRegistrationRepo {
 
         } catch (EmptyResultDataAccessException ee) {
             String sqlSave = "insert into SSR_USER_REGISTRATION values (?,?,?,?,?,?,?,?,?)";
+            ureg.setUserId(ur.userCount() + 1);
             jdbcTemp.update(sqlSave, uComp.getUserId(), uComp.getInitial(), uComp.getName(), uComp.getAdd(), uComp.getMobile(), uComp.geteMail(), uComp.getDesiredPassWord(), uComp.getTempPassWord(), uComp.getAdminUser());
         }
 

@@ -65,4 +65,10 @@ public class LoginAllUser {
             return "complaint/mainLogin";
         }
     }
+    
+    @RequestMapping(value="/logout.htm")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/mainLogin.htm";
+    }
 }

@@ -20,20 +20,21 @@ public class pgmImpl implements pgmRepo {
 
     @Autowired
     JdbcTemplate jd;
-class readProgrammerDB implements RowMapper<ProgrammerAnalystDetail>{
+
+    class readProgrammerDB implements RowMapper<ProgrammerAnalystDetail> {
 
         @Override
         public ProgrammerAnalystDetail mapRow(ResultSet rs, int rowNum) throws SQLException {
-             ProgrammerAnalystDetail detail = new ProgrammerAnalystDetail();
-                detail.setProgrammerName(rs.getString("PROGRAMMER_NAME"));
-                detail.setProgrammerSpecl(rs.getString("PROGRAMMER_SPCL"));
-                detail.setProgrammerExperience(rs.getInt("PROGRAMMER_EXPR"));
-                detail.setProgrammerMobileNo(rs.getString("PROGRAMMER_MOBILE"));
-                detail.setProgrammerEmailId(rs.getString("PROGRAMMER_EMAIL"));
-                return detail;
+            ProgrammerAnalystDetail detail = new ProgrammerAnalystDetail();
+            detail.setProgrammerName(rs.getString("PROGRAMMER_NAME"));
+            detail.setProgrammerSpecl(rs.getString("PROGRAMMER_SPCL"));
+            detail.setProgrammerExperience(rs.getInt("PROGRAMMER_EXPR"));
+            detail.setProgrammerMobileNo(rs.getString("PROGRAMMER_MOBILE"));
+            detail.setProgrammerEmailId(rs.getString("PROGRAMMER_EMAIL"));
+            return detail;
         }
-    
-}
+    }
+
     @Override
     public ProgrammerAnalystDetail read(String Pgmname) {
         String sql = "SELECT PROGRAMMER_NAME,PROGRAMMER_SPCL,PROGRAMMER_EXPR,PROGRAMMER_MOBILE,PROGRAMMER_EMAIL FROM SSR_PROGRAMMER_DETAIL WHERE PROGRAMMER_NAME=?";
@@ -59,7 +60,7 @@ class readProgrammerDB implements RowMapper<ProgrammerAnalystDetail>{
     @Override
     public List<ProgrammerAnalystDetail> getAllDetails() {
         String sql = "SELECT PROGRAMMER_NAME,PROGRAMMER_SPCL,PROGRAMMER_EXPR,PROGRAMMER_MOBILE,PROGRAMMER_EMAIL FROM SSR_PROGRAMMER_DETAIL";
-        return jd.query(sql,new readProgrammerDB());
+        return jd.query(sql, new readProgrammerDB());
 
     }
 }

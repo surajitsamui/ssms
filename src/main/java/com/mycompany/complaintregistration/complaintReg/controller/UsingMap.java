@@ -38,7 +38,7 @@ public abstract class UsingMap {
             home.put("Complaints", "/adminViewCComplainDetails.htm");
             home.put("New Programmer", "/programmerCreationPagebyAdmin.htm");
         }
-        home.put("Log Out", "/logout.htm");
+        home.put("Log Out", "/index.jsp");
         return home;
     }
 }

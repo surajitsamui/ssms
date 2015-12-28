@@ -38,17 +38,25 @@ public class ComplaintDAOImpl implements ComplaintRepo {
         }
     }
 
-    class readComplaintRowUname extends readComplaintRow{
+    class readComplaintRow1 implements RowMapper<Complaint> {
 
         @Override
         public Complaint mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Complaint c=super.mapRow(rs, rowNum); //To change body of generated methods, choose Tools | Templates.
-            c.setName(rs.getString("USER_NAME"));
-            return c;
+            Complaint complaint = new Complaint();
+            complaint.setComplaintNo(rs.getInt("COMPL_NO"));
+            complaint.setComplaintDesc(rs.getString("COMPL_DESC"));
+            complaint.setComplaintUserId(rs.getInt("COMPL_USERID"));
+            complaint.setComplaintType(rs.getString("COMPL_TYPE"));
+            complaint.setComplaintDate(rs.getDate("COMPL_DATE"));
+            complaint.setProgrammerAssignDate(rs.getDate("assign_prog_dt"));
+            complaint.setComplaintSolved(rs.getDate("COMPL_SOLVED"));
+            complaint.setAdminStatus(rs.getString("ADMIN_STATUS"));
+            complaint.setUserFeedback(rs.getString("USER_FEEDBACK"));
+            complaint.setAdminAsign(rs.getInt("ADMIN_ASSIGN"));
+            complaint.setName(rs.getString("USER_NAME"));
+            return complaint;
         }
-        
     }
-   
 
     @Override
     public Complaint read(int complaintNo) {
@@ -112,7 +120,7 @@ public class ComplaintDAOImpl implements ComplaintRepo {
                 + "from SSR_COMPLAINT a, SSR_USER_REGISTRATION b "
                 + "where ADMIN_STATUS=? and b.USER_ID=a.COMPL_USERID  order by COMPL_NO desc ";
 
-        return jdbct.query(sqlstmt, new readComplaintRowUname(), type);
+        return jdbct.query(sqlstmt, new readComplaintRow1(), type);
     }
 //Admin View
 

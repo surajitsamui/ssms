@@ -1,0 +1,19 @@
+/* 
+    Created on : Jan 6, 2014, 5:04:34 PM
+    Author     : mmc-asu
+*/
+body {
+    font-family: helvetica;
+}
+label {
+    text-align: right;
+    display: inline-block;
+}
+fieldset {
+    border-radius: 1px;
+    background: #eef5f5;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    position: relative;
+    border: 0px groove threedface;
+}

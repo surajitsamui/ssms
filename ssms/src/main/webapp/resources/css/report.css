@@ -1,0 +1,74 @@
+
+table.rptUITable {
+    border: 1px solid #D4E0EE;
+    border: 1px solid ;
+    border-collapse: collapse;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #000000;
+}
+
+table.rptUITable caption {
+    font-size:  150%;
+    color: #FFFFFF;
+    background-color: #003366;
+    margin: 2px;
+}
+
+table.rptUITable tbody td, table.rptUITable tbody th, table.rptUITable tbody tr   {
+    border: 1px solid #D4E0EE;
+    padding: 4px;
+}
+
+table.rptUITable th {
+    font-weight: bold;
+    color: #000000;
+    background-color: #CCECFF;
+}
+
+table.rptOne {
+    border:1px solid #D4E0EE;
+    border-collapse:collapse;
+    color:#000000;
+    font-family:Verdana,Arial,Helvetica,sans-serif;
+}
+table.rptOne caption {
+    font-size: 12pt;
+    font-weight: bold;
+}
+table.rptOne thead tr th, table.rptOne tfoot tr th {
+    background-color: #e6EEEE;
+    font-size: 8pt;
+    padding: 4px;
+}
+table.rptOne thead tr .header {
+    background-image: url(/images/sort/bg.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+table.rptOne tbody td {
+    color: #3D3D3D;
+    padding: 4px;
+    font-size: 8pt;
+    background-color: #FFF;
+    vertical-align: top;
+}
+table.rptOne tbody tr.odd td {
+    background-color:#F0F0F6;
+}
+table.rptOne thead tr .headerSortUp {
+    background-image: url(/images/sort/asc.gif);
+}
+table.rptOne thead tr .headerSortDown {
+    background-image: url(/images/sort/desc.gif);
+}
+table.rptOne thead tr .headerSortDown, table.rptOne thead tr .headerSortUp {
+    background-color: #8dbdd8;
+}
+
+table.rptOne tbody td, table.rptOne  thead th {
+    border: 1px solid #D4E0EE;
+}
+

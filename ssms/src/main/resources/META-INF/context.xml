@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<Context antiJARLocking="true" path="">
+
+  <Resource driverClassName="oracle.jdbc.driver.OracleDriver"
+        url="jdbc:oracle:thin:@172.16.104.68:1521:dev"
+        type="javax.sql.DataSource"
+        name="jdbc/OracleDS"
+        username="olimmsprod"
+        password="olimms"
+        maxWait="5000"
+        maxActive="10"
+        maxIdle="1"
+    />
+</Context>-->
+
+<Context antiJARLocking="true" path="">
+  <Resource driverClassName="com.mysql.jdbc.Driver" maxActive="10" 
+            maxIdle="1" maxWait="5000" name="jdbc/OracleDS" 
+            password="soumi123" type="javax.sql.DataSource" 
+            url="jdbc:mysql://localhost:3306/test" username="root"/>
+</Context>

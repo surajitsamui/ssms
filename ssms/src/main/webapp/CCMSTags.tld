@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>ccmstags</short-name>
+    <uri>/WEB-INF/CCMSTags</uri>    
+    <tag>
+        <name>buttonPanel</name>
+        <tag-class>org.iitkgp.ccms.utils.web.ButtonPanel</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>submitOnCancel</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Boolean</type>
+            <description>Will submit the form in case of cancel</description>
+        </attribute>
+        <attribute>
+            <name>debug</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Boolean</type>
+            <description>will print formated javascript usefull for debuging</description>
+        </attribute>
+        <attribute>
+            <name>addButton</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Boolean</type>
+            <description>Show Save Button default is true</description>
+        </attribute>
+        <attribute>
+            <name>editButton</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Boolean</type>
+            <description>Show Edit Button default is false</description>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>HTML Standard Attribute</description>
+        </attribute>
+        <attribute>
+            <name>saveButton</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>Hide save button in case if add /edit</description>
+        </attribute>
+        <attribute>
+            <name>deleteButton</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>show or Hide delete button in case if add /edit. default value is true</description>
+        </attribute>
+        <attribute>
+            <name>submitButton</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>show or Hide submit button in case if add /edit. default value is true</description>
+        </attribute>
+        <attribute>
+            <name>approveButton</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>show or Hide approve button in case if add /edit. default value is true</description>
+        </attribute>
+        <attribute>
+            <name>confirmSubmit</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>show a confirm dialog on submit button default value is false. Applicable only If submitButton is true</description>
+        </attribute>
+<!--        <attribute>
+            <name>confirmApprove</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>show a confirm dialog on submit button default value is false. Applicable only If approveButton is true</description>
+        </attribute>-->
+        <attribute>
+            <name>onSubmit</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>calls this method when any of the buttons are clicked. check the button clicked using the variable </description>
+        </attribute>
+        <attribute>
+            <name>workflowButton</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>calls this method when any of the buttons are clicked. check the button clicked using the variable </description>
+        </attribute>
+        <attribute>
+            <name>refer2</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <description>calls this method when any of the buttons are clicked. check the button clicked using the variable </description>
+        </attribute>
+    </tag>
+
+</taglib>

@@ -1,0 +1,355 @@
+
+/* 
+    Document   : ccms
+    Created on : Sep 24, 2012, 8:03:57 PM
+    Author     : Sintu Pal,Deogharia
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#txtcols {color: #ff3333;
+          text-align:center;
+          height:30px;
+          border-bottom: 1px solid #CCC;
+          padding: 0 0.5em;}
+td#s1{text-align: left;
+      text-overflow: ellipsis;
+}
+td#s3{border-right:1px solid #d3d3d3;
+      text-align: center;}
+td#s2{
+    border-left:1px solid #d3d3d3;
+    text-align: center;}
+
+pre {white-space: pre-wrap; font-family: Verdana, Arial, Helvetica, sans-serif}
+
+/* Start of CSS for tables */
+
+table#searchResult { font-size: 1em; border-collapse: collapse; 
+                     border-spacing:0px; margin:0; text-align: left;
+                     width: 90%; min-width: 400px; }
+table#searchResult caption {background: #0B3861;
+                            font-weight: bold;
+                            font-size: 18px;
+                            color: #FFFFFF;
+                            /*                             margin-left: -1px;*/
+                            padding-bottom: 5px;padding-top: 5px;
+                            /*                             border: 1px solid #fff;*/
+}
+table#searchResult th { font-size: 15px;background: #C2E9FF;padding-bottom: 5px;padding-top: 5px;padding-left: 5px;}
+table#searchResult td { font-size: 15px;padding-bottom: 5px;padding-top: 5px;padding-left: 5px;}
+
+/* for input box and textarea css 3 */
+#searchResult #input, #searchResult #textarea
+{
+    font-family: Arial, Sans-Serif;
+    font-size: 13px;
+    margin-bottom: 5px;
+    display: block;
+    padding: 4px;
+}
+
+.activeField
+{
+    background-image: none;
+    background-color: #ffffff;
+    border: solid 1px #33677F;
+}
+.idle
+{
+    border: solid 1px #85b1de;
+    background-image: url( '/images/blue_bg.png' );
+    background-repeat: repeat-x;
+    background-position: top;
+}
+
+/*   End of CSS for tables   */
+
+/* For Zebra Stripe in Table */
+
+table#searchResult1 { font-size: 1em; border-collapse: collapse; 
+                      border-spacing:0px; margin:0; text-align: left;
+                      width: 90%; min-width: 400px; }
+table#searchResult1 caption {background: #0B3861;
+                             font-weight: bold;
+                             font-size: 18px;
+                             color: #FFFFFF;
+                             /*                             margin-left: -1px;*/
+                             padding-bottom: 5px;padding-top: 5px;
+                             /*                             border: 1px solid #fff;*/
+}
+table#searchResult1 th { font-size: 15px;background: #C2E9FF;padding-bottom: 5px;padding-top: 5px;text-align: center;padding-left: 5px; }
+table#searchResult1 td { font-size: 15px;padding-bottom: 10px;padding-top: 10px; padding-left: 5px; }
+table#searchResult1 .odd {
+    background-color: lavender; }
+table#searchResult1 .odd td {
+    border-bottom: 1px solid lavender; } 
+
+/*   End of Zebra stripe Table */
+
+/*   For Body Alignment with div */
+
+#centered
+{ 
+    /*                width : 770px ;*/
+    text-align : left ;
+    margin-left : auto ;
+    margin-right : auto ;
+    position : relative ;
+}
+
+body {
+    /*    background:	url('/images/linen.png') repeat;*/
+}
+
+/* For Zebra Stripe in Table */
+
+table#searchResult1 { font-size: 1em; border-collapse: collapse; 
+                      border-spacing:0px; margin:0; text-align: left;
+                      width: 90%; min-width: 400px; }
+table#searchResult1 caption {background: #0B3861;
+                             font-weight: bold;
+                             font-size: 18px;
+                             color: #FFFFFF;
+                             /*                             margin-left: -1px;*/
+                             padding-bottom: 5px;padding-top: 5px;
+                             /*                             border: 1px solid #fff;*/
+}
+/*table#searchResult1 th { background: #C2E9FF}
+table#searchResult1 td { font-size: 15px;}*/
+table#searchResult1 .odd {
+    background-color: lavender; }
+table#searchResult1 .odd td {
+    border-bottom: 1px solid lavender; } 
+
+/*   End of Zebra stripe Table */
+
+/* For Zebra Stripe in Table */
+
+table.searchResult1 { font-size: 1em; border-collapse: collapse; 
+                      border-spacing:0px; margin:0; text-align: left;
+                      width: 90%; min-width: 400px; }
+table.searchResult1 caption {background: #0B3861;
+                             font-weight: bold;
+                             font-size: 18px;
+                             color: #FFFFFF;
+                             margin-left: -1px;
+                             padding: .2em .8em;
+                             border: 1px solid #fff;
+}
+table.searchResult1 th { font-size: 15px;background: #C2E9FF;padding-bottom: 5px;padding-top: 5px;text-align: center;padding-left: 5px; }
+table.searchResult1 td { font-size: 15px;padding-bottom: 10px;padding-top: 10px; padding-left: 5px; }
+table.searchResult1 .odd {
+    background-color: lavender; }
+table.searchResult1 .odd td {
+    border-bottom: 1px solid lavender; } 
+
+/*   End of Zebra stripe Table */
+
+/* Start of button CSS Styles  ------ */
+
+.button {
+    cursor: pointer;
+    font-size:14px;
+    width: auto;
+    min-width: 75px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    -moz-border-radius:1px;
+    -webkit-border-radius:1px;
+    border-radius:1px;
+    border:1px solid #dcdcdc;
+    text-decoration:none;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #f9f9f9), color-stop(100%, #e9e9e9) );
+    background:-moz-linear-gradient( center top, #f9f9f9 5%, #e9e9e9 100% );
+    background:-ms-linear-gradient( top, #f9f9f9 5%, #e9e9e9 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9');
+    background-color:#f9f9f9;
+    color:#666666;
+    display:inline-block;
+    text-shadow:1px 1px 0px #ffffff;
+    -webkit-box-shadow:inset 1px 1px 0px 0px #ffffff;
+    -moz-box-shadow:inset 1px 1px 0px 0px #ffffff;
+    box-shadow:inset 1px 1px 0px 0px #ffffff;;
+}
+.button:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #dfdfdf), color-stop(100%, #ededed) );
+    background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+    background:-ms-linear-gradient( top, #dfdfdf 5%, #ededed 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+    background-color:#dfdfdf;
+}
+.button:active {
+   position:relative;
+    top:1px;
+}
+
+/*input[type=button],input[type=submit],input[type=reset]{
+    padding-left: 2%;
+    padding-right: 2%;
+}*/
+
+h1{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+/**{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}*/
+/* End of Button CSS  */
+
+.txtarea{ font-size: 14px;padding-bottom: 10px;padding-top: 10px; padding-left: 5px;text-overflow: ellipsis; }
+
+/* for ribbon menu css */
+/*
+html{-webkit-font-smoothing:antialiased;}
+body{background:#e3e3e3 url("/images/bkg-pat.png") repeat scroll 0 0;
+     font: 12px/1.5em Arial, Helvetica, sans-serif, "Arial Narrow";color: #ffffff;}
+ul, li { list-style:none }
+a{color:#fb7c03;text-decoration:none;}
+div { position:relative } 
+
+#menu-holder{margin:25px auto;margin-top: 0px;width: 1020px;height:61px;}
+
+.menu {margin:0 auto;
+       padding:0;
+       width:1020px;
+       height: 61px;	
+       background: #656d80;
+       background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #656d80),color-stop(0.6, #8690a9));
+       background: -moz-linear-gradient(center bottom,#656d80 0%, #8690a9 60%);
+       filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#8690a9', endColorstr='#656d80');
+}
+.menu li {background: url("/images/menu-separator.gif") no-repeat scroll right center transparent;
+          padding: 0px 2px 0px 0px; float: left; position: relative; text-transform:uppercase;
+          font-family: 'Oswald', sans-serif;font-size:15px;}
+.menu li a {padding:21px 25px 22px 25px;color: #ffffff;display:block;text-shadow: 0px 1px 0px #000000;}
+.menu li:hover > a {color:#ffffff;
+                    background:#56596a;
+                    background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #56596a),color-stop(0.6, #686c80));
+                    background: -moz-linear-gradient(center bottom,#56596a 0%, #686c80 60%);
+                    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#686c80', endColorstr='#56596a');
+} */
+/* drop down sub-menu */
+/* .menu ul { background: #56596a;
+           display: none;
+           margin: 0;
+           padding: 0;
+           width: 190px;
+           position: absolute;
+           top: 61px;
+           left: -1px;
+}
+.menu li:hover > ul {display: block;}
+.menu ul li {display:block;
+             float: none;
+             margin: 0px 0px 0px 15px;
+             padding:2px 0px;
+             background:url("/images/submenu-sep.gif") no-repeat scroll left bottom transparent;
+} */
+/* sub menu hover link */
+/* .menu ul li:hover a, .menu li:hover li a {
+    background: none;
+    color: #ffffff;
+}
+.menu ul a {
+    display:block;height:auto;
+    font-size: 14px;
+    padding:15px 0px 15px 10px;
+}
+.menu ul a:hover, .menu ul li:hover > a{
+    background: #56596a !important; */
+/* fix IE */
+/*
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#56596a', endColorstr='#56596a'); 
+    background: -webkit-gradient(linear, left top, left bottom, from(#56596a), to(#56596a)) !important;
+    background: -moz-linear-gradient(top,  #56596a,  #56596a) !important;
+    color: #e0e0e0 !important;
+}
+
+#corner-left{position:absolute;background:url("/images/corner-left.png") no-repeat 0 0;top:19px;left:-83px;width:94px;height:60px;text-indent:-9999px;z-index:-2;}
+#corner-right{position:absolute;background:url("/images/corner-right.png") no-repeat 0 0;top:19px;right:-83px;width:94px;height:60px;text-indent:-9999px;z-index:-2;}
+.content{padding-top:1px;padding-left: 2px;margin:0px auto;width: 98%;min-height:680px; background:#ffffff; text-align:center;color: #000100;font-size:25px;z-index:-2;}
+a.go{font-size:15px;}
+a.go:hover{ text-decoration:underline;}
+#home{margin-top:100px;}
+
+*/
+/* for ribbon menu css */
+
+#navig-breadcrumbs {
+    height: 21px;
+    width: 90%; min-width: 400px;
+    background-color: rgb(229, 232, 237);
+    padding-top: 8px;
+    font-size: 11px;margin: 2px 0px 0px;
+    clear: both;
+    background-color: rgb(238, 238, 238);
+    border-radius: 5px 5px 0px 0px;
+    text-align: left;
+    padding: 5px 5px 5px 15px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 61px;
+}
+#login {
+    float: right;
+    margin-right: 10px;
+}
+A:link, A:visited {
+    color: rgb(35, 86, 157);
+    font-weight: normal;
+    text-decoration: none;
+}
+img.icon {
+    display: inline-block;
+    margin-bottom: -3px;
+}
+
+input.freshwhite{
+    font-size:18px;
+    background: url(/images/input-box-white387a.png) left center no-repeat;
+    height:43px;
+    width:390px;
+    border:0px;
+    padding-top:10px;
+    padding-bottom:7px;
+    padding-left:18px;
+    margin-right:15px;
+    outline: none;
+    text-align: left;
+    /*    text-indent: 12px;*/
+    /*text-overflow: inline;*/
+    Vertical-Align: Middle;
+
+    height: 21px;
+    line-height: 20px; /* FOR IE */
+}
+input.freshwhite:hover{
+    background: url(/images/input-box-white387b.png) transparent left center no-repeat;
+}
+input.freshwhite:focus{
+    background: url(/images/input-box-white387a.png) transparent left center no-repeat;
+}
+.parent{
+    position:relative;
+    height:200px;
+    width:400px;
+    background-color:white;
+}
+
+.child{
+    position:absolute;
+    height:50px;
+    bottom:2px;
+    left:2px;
+    right:2px;
+}
+.format
+{
+    width:100%; 
+    word-wrap:break-word;
+    font-size:18px;
+    font-family:Times New Roman;
+}

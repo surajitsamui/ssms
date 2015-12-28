@@ -1,0 +1,41 @@
+/* 
+    Document   : reportUI
+    Created on : Sep 30, 2010, 8:12:21 PM
+    Author     : nlcadmin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+table.rptUITable {
+    border: 1px solid #D4E0EE;
+    border: 1px solid ;
+    border-collapse: collapse;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #000000;
+
+}
+
+table.rptUITable caption {
+    font-size: 150%;
+    color: #FFFFFF;
+    background-color: #003366;
+}
+
+table.rptUITable tbody td, table.rptUITable tbody th, table.rptUITable tbody tr   {
+    border: 1px solid #D4E0EE;
+    padding: 4px;
+}
+
+table.rptUITable th {
+    font-weight: bold;
+    color: #000000;
+    background-color: #CCECFF;
+}
+
